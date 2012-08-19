@@ -1,0 +1,1 @@
+/home/cherrot/.bash_logout
