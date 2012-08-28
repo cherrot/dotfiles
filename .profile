@@ -30,7 +30,6 @@ fi
 _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 FESTVOXDIR=/opt/festival/festvox
 ESTDIR=/opt/festival/speech_tools
-PATH=$PATH:/opt/android-sdk/platform-tools:/opt/android-sdk/tools:/opt/festival/speech_tools/bin:/opt/festival/festival/bin:/opt/SDKs/qooxdoo-1.5-sdk/tool/bin
 AXIS2_HOME=/home/cherrot/code/Libraries/axis2-1.6.1
 JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 
