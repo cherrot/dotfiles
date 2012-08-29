@@ -34,6 +34,8 @@ PATH=$PATH:/opt/android-sdk/platform-tools:/opt/android-sdk/tools:/opt/festival/
 AXIS2_HOME=/home/cherrot/code/Libraries/axis2-1.6.1
 JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 
+alias xclip='xclip -sel clip'
+
 export LESS_TERMCAP_mb=$'\E[05;34m'       # begin blinking
 export LESS_TERMCAP_md=$'\E[01;34m'       # begin bold
 export LESS_TERMCAP_me=$'\E[0m'           # end mode
