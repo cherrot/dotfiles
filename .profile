@@ -27,11 +27,11 @@ fi
 #export LC_COLLATE="zh_CN.UTF-8"
 #export LANG="zh_CN.UTF-8"
 
-_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
-FESTVOXDIR=/opt/festival/festvox
-ESTDIR=/opt/festival/speech_tools
-AXIS2_HOME=/home/cherrot/code/Libraries/axis2-1.6.1
-JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+# FESTVOXDIR=/opt/festival/festvox
+# ESTDIR=/opt/festival/speech_tools
+# AXIS2_HOME=/home/cherrot/code/Libraries/axis2-1.6.1
+# JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 
 alias xclip='xclip -sel clip'
 
