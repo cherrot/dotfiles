@@ -1,0 +1,6 @@
+#require-chap
+require-pap
+login
+lcp-echo-interval 10
+lcp-echo-failure 20
+ms-dns 8.8.8.8
