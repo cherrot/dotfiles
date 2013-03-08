@@ -37,8 +37,8 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 # AXIS2_HOME=/home/cherrot/code/Libraries/axis2-1.6.1
 # JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 
-alias xclip='xclip -sel clip'
-alias sshf='ssh -TfnND 8090'
+#alias xclip='xclip -sel clip'
+#alias sshf='ssh -TfnND 8090'
 
 export LESS_TERMCAP_mb=$'\E[05;34m'       # begin blinking
 export LESS_TERMCAP_md=$'\E[01;34m'       # begin bold
@@ -49,3 +49,5 @@ export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;33m'       # begin underline
 
 PYTHONPATH=$HOME/.local/lib/python2.7/site-packages
+export DATA=$HOME/data
+export TMP=$HOME/tmp
