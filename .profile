@@ -17,13 +17,9 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-if [ -d "/opt/darktable/bin" ] ; then
-    PATH="$PATH:/opt/darktable/bin"
-fi
+#if [ -d "$HOME/bin" ] ; then
+#    PATH="$HOME/bin:$PATH"
+#fi
 
 #export LANGUAGE="zh_CN:en"
 #export LC_MESSAGES="zh_CN.UTF-8"
@@ -31,7 +27,7 @@ fi
 #export LC_COLLATE="zh_CN.UTF-8"
 #export LANG="zh_CN.UTF-8"
 
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 # FESTVOXDIR=/opt/festival/festvox
 # ESTDIR=/opt/festival/speech_tools
 # AXIS2_HOME=/home/cherrot/code/Libraries/axis2-1.6.1
@@ -40,14 +36,12 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 #alias xclip='xclip -sel clip'
 #alias sshf='ssh -TfnND 8090'
 
-export LESS_TERMCAP_mb=$'\E[05;34m'       # begin blinking
-export LESS_TERMCAP_md=$'\E[01;34m'       # begin bold
-export LESS_TERMCAP_me=$'\E[0m'           # end mode
-export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
-export LESS_TERMCAP_so=$'\E[44;33m'       # begin standout-mode
-export LESS_TERMCAP_ue=$'\E[0m'           # end underline
-export LESS_TERMCAP_us=$'\E[04;33m'       # begin underline
+#export LESS_TERMCAP_mb=$'\E[05;34m'       # begin blinking
+#export LESS_TERMCAP_md=$'\E[01;34m'       # begin bold
+#export LESS_TERMCAP_me=$'\E[0m'           # end mode
+#export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
+#export LESS_TERMCAP_so=$'\E[44;33m'       # begin standout-mode
+#export LESS_TERMCAP_ue=$'\E[0m'           # end underline
+#export LESS_TERMCAP_us=$'\E[04;33m'       # begin underline
 
 PYTHONPATH=$HOME/.local/lib/python2.7/site-packages
-export DATA=$HOME/data
-export TMP=$HOME/tmp
