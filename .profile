@@ -16,13 +16,13 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
-fi
-
-if [ -d "/opt/darktable/bin" ] ; then
-    PATH="$PATH:/opt/darktable/bin"
 fi
 
 #export LANGUAGE="zh_CN:en"
