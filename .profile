@@ -21,10 +21,6 @@ fi
 #    PATH="$HOME/bin:$PATH"
 #fi
 
-if [ -d "/opt/darktable/bin" ] ; then
-    PATH="$PATH:/opt/darktable/bin"
-fi
-
 #export LANGUAGE="zh_CN:en"
 #export LC_MESSAGES="zh_CN.UTF-8"
 #export LC_CTYPE="zh_CN.UTF-8"
