@@ -21,9 +21,9 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
+#if [ -d "$HOME/bin" ] ; then
+#    PATH="$HOME/bin:$PATH"
+#fi
 
 #export LANGUAGE="zh_CN:en"
 #export LC_MESSAGES="zh_CN.UTF-8"
@@ -49,5 +49,9 @@ export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;33m'       # begin underline
 
 PYTHONPATH=$HOME/.local/lib/python2.7/site-packages
-export DATA=$HOME/data
-export TMP=$HOME/tmp
+if [ -d "$HOME/data" ] ; then
+    export DATA=$HOME/data
+fi
+if [ -d "$HOME/tmp" ] ; then
+    export TMP=$HOME/tmp
+fi
