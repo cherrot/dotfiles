@@ -21,13 +21,17 @@ fi
 #    PATH="$HOME/bin:$PATH"
 #fi
 
+if [ -d "/opt/darktable/bin" ] ; then
+    PATH="$PATH:/opt/darktable/bin"
+fi
+
 #export LANGUAGE="zh_CN:en"
 #export LC_MESSAGES="zh_CN.UTF-8"
 #export LC_CTYPE="zh_CN.UTF-8"
 #export LC_COLLATE="zh_CN.UTF-8"
 #export LANG="zh_CN.UTF-8"
 
-#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 # FESTVOXDIR=/opt/festival/festvox
 # ESTDIR=/opt/festival/speech_tools
 # AXIS2_HOME=/home/cherrot/code/Libraries/axis2-1.6.1
@@ -36,12 +40,18 @@ fi
 #alias xclip='xclip -sel clip'
 #alias sshf='ssh -TfnND 8090'
 
-#export LESS_TERMCAP_mb=$'\E[05;34m'       # begin blinking
-#export LESS_TERMCAP_md=$'\E[01;34m'       # begin bold
-#export LESS_TERMCAP_me=$'\E[0m'           # end mode
-#export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
-#export LESS_TERMCAP_so=$'\E[44;33m'       # begin standout-mode
-#export LESS_TERMCAP_ue=$'\E[0m'           # end underline
-#export LESS_TERMCAP_us=$'\E[04;33m'       # begin underline
+export LESS_TERMCAP_mb=$'\E[05;34m'       # begin blinking
+export LESS_TERMCAP_md=$'\E[01;34m'       # begin bold
+export LESS_TERMCAP_me=$'\E[0m'           # end mode
+export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
+export LESS_TERMCAP_so=$'\E[44;33m'       # begin standout-mode
+export LESS_TERMCAP_ue=$'\E[0m'           # end underline
+export LESS_TERMCAP_us=$'\E[04;33m'       # begin underline
 
 PYTHONPATH=$HOME/.local/lib/python2.7/site-packages
+if [ -d "$HOME/data" ] ; then
+    export DATA=$HOME/data
+fi
+if [ -d "$HOME/tmp" ] ; then
+    export TMP=$HOME/tmp
+fi
