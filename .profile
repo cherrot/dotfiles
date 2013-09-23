@@ -17,12 +17,8 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-#if [ -d "/opt/darktable/bin" ] ; then
-#    PATH="$PATH:/opt/darktable/bin"
+#if [ -d "$HOME/bin" ] ; then
+#    PATH="$HOME/bin:$PATH"
 #fi
 
 #export LANGUAGE="zh_CN:en"
@@ -49,5 +45,3 @@ export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;33m'       # begin underline
 
 PYTHONPATH=$HOME/.local/lib/python2.7/site-packages
-export WALL=$HOME/Pictures/wallpaper
-#sudo mv /lib/modules/$(uname -r)/kernel/drivers/input/evbug.ko /lib/modules/$(uname -r)/kernel/drivers/input/evbug.ko.bak
