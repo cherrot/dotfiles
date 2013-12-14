@@ -17,9 +17,9 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # set PATH so it includes user's private bin if it exists
-#if [ -d "$HOME/bin" ] ; then
-#    PATH="$HOME/bin:$PATH"
-#fi
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
 
 #export LANGUAGE="zh_CN:en"
 #export LC_MESSAGES="zh_CN.UTF-8"
@@ -32,6 +32,8 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 # ESTDIR=/opt/festival/speech_tools
 # AXIS2_HOME=/home/cherrot/code/Libraries/axis2-1.6.1
 # JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+
+#sudo mv /lib/modules/$(uname -r)/kernel/drivers/input/evbug.ko /lib/modules/$(uname -r)/kernel/drivers/input/evbug.ko.bak
 
 alias xclip='xclip -sel clip'
 alias sshf='ssh -TfnND 8090'
