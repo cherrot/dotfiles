@@ -35,7 +35,6 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
 #sudo mv /lib/modules/$(uname -r)/kernel/drivers/input/evbug.ko /lib/modules/$(uname -r)/kernel/drivers/input/evbug.ko.bak
 
-alias xclip='xclip -sel clip'
 alias sshf='ssh -TfnND 8090'
 
 export LESS_TERMCAP_mb=$'\E[05;34m'       # begin blinking
@@ -47,3 +46,7 @@ export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;33m'       # begin underline
 
 PYTHONPATH=$HOME/.local/lib/python2.7/site-packages
+export EDITOR='vim'
+alias ll='ls -ahlF'
+alias la='ls -A'
+alias l='ls -CF'
