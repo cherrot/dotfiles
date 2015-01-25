@@ -14,6 +14,7 @@
 ## The following line were added by myself 
 #default editor
 export EDITOR="vim"
+export TERM=xterm-256color
 #Aliases: 
 alias pacupg='sudo pacman -Syu'   # 同步软件仓库信息然后升级系统
 alias aurupg='yaourt -Syu --aur'   # 同步软件仓库信息然后升级系统
