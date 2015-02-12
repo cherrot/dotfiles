@@ -1,16 +1,9 @@
-# http://docs.rubygems.org/read/chapter/11
-# REMEMBER!! unset http_proxy unset https_proxy
---- 
+---
+:backtrace: false
+:bulk_threshold: 1000
+:sources:
+- https://ruby.taobao.org/
+:update_sources: true
+:verbose: true
 gem: --user-install --no-ri --no-rdoc
 benchmark: false
-verbose: true
-update_sources: true
-sources: 
-- https://ruby.taobao.org/
-#- http://gems.rubyforge.org/
-#- http://rubygems.org/
-backtrace: true
-bulk_threshold: 1000
- 
-# HTTP Proxy options
-#http-proxy: http://megvii:'face++proxy'@124.205.0.130:12345
