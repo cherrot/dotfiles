@@ -16,6 +16,7 @@
 export EDITOR="vim"
 export TERM=xterm-256color
 #Aliases: 
+alias gpush=git push oringin
 alias lsport=lsof -Pnl +M -i4
 #alias lsport6=lsof -Pnl +M -i6
 
