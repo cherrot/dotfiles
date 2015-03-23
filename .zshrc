@@ -14,7 +14,7 @@
 ## The following line were added by myself 
 #default editor
 export EDITOR="vim"
-export TERM=xterm-256color
+export TERM='xterm-256color'
 #Aliases: 
 alias gpush='git push origin'
 alias lsport='lsof -Pnl +M -i4'
