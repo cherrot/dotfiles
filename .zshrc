@@ -16,7 +16,7 @@
 export EDITOR="vim"
 export TERM=xterm-256color
 #Aliases: 
-alias gpush='git push origin'
+#alias gpush='git push origin' #use ggpush
 alias lsport='lsof -Pnl +M -i4'
 #alias lsport6='lsof -Pnl +M -i6'
 
