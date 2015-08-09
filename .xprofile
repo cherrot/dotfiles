@@ -1,5 +1,5 @@
-#export LANG=zh_CN.UTF-8
 #to enable fcitx in archlinux
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
+#export LANG=zh_CN.UTF-8
+#export GTK_IM_MODULE=fcitx
+#export QT_IM_MODULE=fcitx
+#export XMODIFIERS=@im=fcitx
