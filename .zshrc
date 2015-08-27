@@ -15,6 +15,8 @@
 #default editor
 export EDITOR="vim"
 export TERM='xterm-256color'
+export GOPATH=~/go
+
 #Aliases: 
 #alias gpush='git push origin' #use ggpush
 alias lsport='lsof -Pnl +M -i4'
