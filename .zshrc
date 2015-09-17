@@ -17,7 +17,7 @@ export EDITOR="vim"
 export TERM='xterm-256color'
 export GOPATH=~/go
 
-#export http_proxy=http://megvii:face++@tel.lc.ignw.net:25/
+#export http_proxy=http://megvii:face%2B%2B@tel.lc.ignw.net:25/
 #export https_proxy=$http_proxy
 #export ftp_proxy=$http_proxy
 #export rsync_proxy=$http_proxy
