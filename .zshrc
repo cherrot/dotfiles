@@ -17,6 +17,12 @@ export EDITOR="vim"
 export TERM='xterm-256color'
 export GOPATH=~/go
 
+#export http_proxy=http://megvii:face++@tel.lc.ignw.net:25/
+#export https_proxy=$http_proxy
+#export ftp_proxy=$http_proxy
+#export rsync_proxy=$http_proxy
+#export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
+
 #Aliases: 
 #alias gpush='git push origin' #use ggpush
 alias lsport='lsof -Pnl +M -i4'
