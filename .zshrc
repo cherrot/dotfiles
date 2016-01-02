@@ -16,7 +16,11 @@
 export EDITOR="vim"
 export TERM='xterm-256color'
 export GOPATH=~/go
-source $HOME/Library/Python/2.7/bin/virtualenvwrapper.sh
+
+wrapper_path=$HOME/Library/Python/2.7/bin/virtualenvwrapper.sh
+if [[ -f $wrapper_path ]]; then
+    source $wrapper_path
+fi
 
 #export http_proxy=http://megvii:face%2B%2B@tel.lc.ignw.net:25/
 #export https_proxy=$http_proxy
