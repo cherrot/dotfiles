@@ -22,7 +22,7 @@ if [[ -f $wrapper_path ]]; then
     source $wrapper_path
 fi
 
-#export http_proxy=http://megvii:face%2B%2B@tel.lc.ignw.net:25/
+#export http_proxy=http://user:pass%2B%2B@host:port/
 #export https_proxy=$http_proxy
 #export ftp_proxy=$http_proxy
 #export rsync_proxy=$http_proxy
@@ -140,3 +140,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
