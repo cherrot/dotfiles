@@ -38,7 +38,7 @@ sub notify {
 	" -- '" . $summary . "'" .
 	" '" . $message . "'";
 
-    $server->command($cmd);
+    # $server->command($cmd);
 }
  
 sub print_text_notify {
