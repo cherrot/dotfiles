@@ -29,6 +29,8 @@ fi
 #export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
 
 #Aliases: 
+#
+alias irssi='TERM=screen-256color irssi'
 #alias gpush='git push origin' #use ggpush
 alias lsport='lsof -Pnl +M -i4'
 #alias lsport6='lsof -Pnl +M -i6'
