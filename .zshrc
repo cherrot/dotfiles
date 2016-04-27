@@ -15,7 +15,7 @@
 #default editor
 export EDITOR="vim"
 #export TERM='xterm-256color'
-export TERM='screen-256color'
+#export TERM='screen-256color'
 export GOPATH=~/dev/go
 
 wrapper_path=$HOME/Library/Python/2.7/bin/virtualenvwrapper.sh
