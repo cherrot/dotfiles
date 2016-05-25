@@ -14,6 +14,7 @@
 ## The following line were added by myself 
 #default editor
 export EDITOR="vim"
+# https://github.com/robbyrussell/oh-my-zsh/issues/3823
 #export TERM='xterm-256color'
 #export TERM='screen-256color'
 export GOPATH=~/dev/go
@@ -32,7 +33,7 @@ fi
 #Aliases: 
 #
 # Fix irssi scroll problem on tmux. see https://www.wisdomandwonder.com/link/7784/making-irssi-refresh-work-with-tmux
-#alias irssi='TERM=screen-256color irssi'
+alias irssi='TERM=screen-256color irssi'
 #alias gpush='git push origin' #use ggpush
 alias lsport='lsof -Pnl +M -i4'
 #alias lsport6='lsof -Pnl +M -i6'
