@@ -18,6 +18,7 @@ export EDITOR="vim"
 #export TERM='xterm-256color'
 #export TERM='screen-256color'
 export GOPATH=~/dev/go
+export GO15VENDOREXPERIMENT=1
 
 wrapper_path=$HOME/Library/Python/2.7/bin/virtualenvwrapper.sh
 if [[ -f $wrapper_path ]]; then
@@ -117,6 +118,7 @@ plugins=(git)
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH=$PATH:"$GOPATH/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh

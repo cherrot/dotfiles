@@ -1,0 +1,10 @@
+[user]
+	name = Cherrot Luo
+	email = cherrotluo@gmail.com
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+        #conflictstyle = diff3
+[core]
+	ignorecase = false
