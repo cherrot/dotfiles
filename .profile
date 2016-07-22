@@ -1,56 +1,33 @@
-# ~/.profile: executed by the command interpreter for login shells.
-# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
-# exists.
-# see /usr/share/doc/bash/examples/startup-files for examples.
-# the files are located in the bash-doc package.
+export GOPATH=~/dev/go
+export PATH=$PATH:"$GOPATH/bin"
+export GO15VENDOREXPERIMENT=1
 
-# the default umask is set in /etc/profile; for setting the umask
-# for ssh logins, install and configure the libpam-umask package.
-#umask 022
 
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
-fi
+#export http_proxy=http://user:pass%2B%2B@host:port/
+#export https_proxy=$http_proxy
+#export ftp_proxy=$http_proxy
+#export rsync_proxy=$http_proxy
+#export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
 
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
+wrapper_path=$HOME/Library/Python/2.7/bin/virtualenvwrapper.sh
+[[ -f $wrapper_path ]] && source $wrapper_path
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
+#Aliases: 
+#
+# Fix irssi scroll problem on tmux. see https://www.wisdomandwonder.com/link/7784/making-irssi-refresh-work-with-tmux
+alias irssi='TERM=screen-256color irssi'
+#alias gpush='git push origin' #use ggpush
+alias lsport='lsof -Pnl +M -i4'
+#alias lsport6='lsof -Pnl +M -i6'
 
-#export LANGUAGE="zh_CN:en"
-#export LC_MESSAGES="zh_CN.UTF-8"
-#export LC_CTYPE="zh_CN.UTF-8"
-#export LC_COLLATE="zh_CN.UTF-8"
-#export LANG="zh_CN.UTF-8"
-
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
-# FESTVOXDIR=/opt/festival/festvox
-# ESTDIR=/opt/festival/speech_tools
-# AXIS2_HOME=/home/cherrot/code/Libraries/axis2-1.6.1
-# JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
-
-#sudo mv /lib/modules/$(uname -r)/kernel/drivers/input/evbug.ko /lib/modules/$(uname -r)/kernel/drivers/input/evbug.ko.bak
-
-alias sshf='ssh -TfnND 8090'
-
-export LESS_TERMCAP_mb=$'\E[05;34m'       # begin blinking
-export LESS_TERMCAP_md=$'\E[01;34m'       # begin bold
-export LESS_TERMCAP_me=$'\E[0m'           # end mode
-export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
-export LESS_TERMCAP_so=$'\E[44;33m'       # begin standout-mode
-export LESS_TERMCAP_ue=$'\E[0m'           # end underline
-export LESS_TERMCAP_us=$'\E[04;33m'       # begin underline
-
-PYTHONPATH=$HOME/.local/lib/python2.7/site-packages
-export EDITOR='vim'
-alias ll='ls -ahlF'
-alias la='ls -A'
-alias l='ls -CF'
+alias pacupg='sudo pacman -Syu'   # 同步软件仓库信息然后升级系统
+alias aurupg='yaourt -Syu --aur'   # 同步软件仓库信息然后升级系统
+alias pacin='sudo pacman -S'      # 从软件仓库安装软件包
+alias pacins='sudo pacman -U'     # 从本地文件安装软件包
+alias pacre='sudo pacman -R'      # 删除软件包，保留配置和依赖
+alias pacrem='sudo pacman -Rns'   # 彻底删除软件包，清除配置，删除无用依赖
+alias pacrep='pacman -Si'         # 显示软件仓库中某软件包的信息
+alias pacreps='pacman -Ss'        # 在软件仓库搜索软件包
+alias pacloc='pacman -Qi'         # 显示本地数据库中某软件包的信息
+alias paclocs='pacman -Qs'        # 在本地数据库搜索软件包
+alias pacmir='sudo pacman -Syy'   # 强制刷新软件仓库信息

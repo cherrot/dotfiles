@@ -1,67 +1,3 @@
-## Lines configured by zsh-newuser-install
-#HISTFILE=~/.histfile
-#HISTSIZE=1000
-#SAVEHIST=10240
-#bindkey -v
-## End of lines configured by zsh-newuser-install
-## The following lines were added by compinstall
-#zstyle :compinstall filename '/home/cherrot/.zshrc'
-#
-#autoload -Uz compinit
-#compinit
-## End of lines added by compinstall
-#
-## The following line were added by myself 
-#default editor
-export EDITOR="vim"
-# https://github.com/robbyrussell/oh-my-zsh/issues/3823
-#export TERM='xterm-256color'
-#export TERM='screen-256color'
-export GOPATH=~/dev/go
-export GO15VENDOREXPERIMENT=1
-
-wrapper_path=$HOME/Library/Python/2.7/bin/virtualenvwrapper.sh
-if [[ -f $wrapper_path ]]; then
-    source $wrapper_path
-fi
-
-#export http_proxy=http://user:pass%2B%2B@host:port/
-#export https_proxy=$http_proxy
-#export ftp_proxy=$http_proxy
-#export rsync_proxy=$http_proxy
-#export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
-
-#Aliases: 
-#
-# Fix irssi scroll problem on tmux. see https://www.wisdomandwonder.com/link/7784/making-irssi-refresh-work-with-tmux
-alias irssi='TERM=screen-256color irssi'
-#alias gpush='git push origin' #use ggpush
-alias lsport='lsof -Pnl +M -i4'
-#alias lsport6='lsof -Pnl +M -i6'
-
-alias pacupg='sudo pacman -Syu'   # 同步软件仓库信息然后升级系统
-alias aurupg='yaourt -Syu --aur'   # 同步软件仓库信息然后升级系统
-alias pacin='sudo pacman -S'      # 从软件仓库安装软件包
-alias pacins='sudo pacman -U'     # 从本地文件安装软件包
-alias pacre='sudo pacman -R'      # 删除软件包，保留配置和依赖
-alias pacrem='sudo pacman -Rns'   # 彻底删除软件包，清除配置，删除无用依赖
-alias pacrep='pacman -Si'         # 显示软件仓库中某软件包的信息
-alias pacreps='pacman -Ss'        # 在软件仓库搜索软件包
-alias pacloc='pacman -Qi'         # 显示本地数据库中某软件包的信息
-alias paclocs='pacman -Qs'        # 在本地数据库搜索软件包
-alias pacmir='sudo pacman -Syy'   # 强制刷新软件仓库信息
-## For autocompletion of command line switches for aliases
-#setopt completealiases
-## show history which matches the current input.
-#bindkey "^[[A" history-search-backward
-#bindkey "^[[B" history-search-forward
-## set up a colored prompt in Zsh
-#autoload -U promptinit
-#promptinit
-#prompt pws
-#
-######################## USE oh-my-zsh INSTEAD ###########################
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -118,7 +54,6 @@ plugins=(git)
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH=$PATH:"$GOPATH/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -148,4 +83,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export EDITOR="vim"
+source $HOME/.profile
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
