@@ -1,7 +1,5 @@
 export GOPATH=~/dev/go
-export PATH=$PATH:"$GOPATH/bin"
-export GO15VENDOREXPERIMENT=1
-
+export PATH=$PATH:/usr/local/sbin:"$GOPATH/bin":$HOME/bin
 
 #export http_proxy=http://user:pass%2B%2B@host:port/
 #export https_proxy=$http_proxy
