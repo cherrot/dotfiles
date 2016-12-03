@@ -1,4 +1,4 @@
-export GOPATH=~/dev/go
+export GOPATH=~/go
 export PATH=$PATH:/usr/local/sbin:"$GOPATH/bin":$HOME/bin
 
 #export http_proxy=http://user:pass%2B%2B@host:port/
@@ -29,3 +29,5 @@ alias pacreps='pacman -Ss'        # 在软件仓库搜索软件包
 alias pacloc='pacman -Qi'         # 显示本地数据库中某软件包的信息
 alias paclocs='pacman -Qs'        # 在本地数据库搜索软件包
 alias pacmir='sudo pacman -Syy'   # 强制刷新软件仓库信息
+
+export PKG_CONFIG_PATH=$HOME/local/pkgconfig${PKG_CONFIG_PATH:+:}${PKG_CONFIG_PATH:-}
