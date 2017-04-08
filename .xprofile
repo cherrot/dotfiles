@@ -1,10 +1,12 @@
 #to enable fcitx in archlinux
 #export LANG=zh_CN.UTF-8
-#export GTK_IM_MODULE=fcitx
-#export QT_IM_MODULE=fcitx
-#export XMODIFIERS=@im=fcitx
-#
 #according to arch wiki
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
-export XMODIFIERS="@im=fcitx"
+
+#avoid war thunder crashing under steam
+#export XMODIFIERS="@im=fcitx"
+
+#enable fcitx for games built on libSDL
+#however it does not work at all
+SDL_IM_MODULE=fcitx
