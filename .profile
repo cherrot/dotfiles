@@ -15,8 +15,9 @@ export LESS_TERMCAP_so=$'\E[44;33m'       # begin standout-mode
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;33m'       # begin underline
 
-wrapper_path=$HOME/Library/Python/2.7/bin/virtualenvwrapper.sh
-[[ -f $wrapper_path ]] && source $wrapper_path
+[[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper.sh
+wrapper_osx=$HOME/Library/Python/2.7/bin/virtualenvwrapper.sh
+[[ -f $wrapper_osx ]] && source $wrapper_osx
 
 #Aliases: 
 #
