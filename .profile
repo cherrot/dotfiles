@@ -37,6 +37,7 @@ alias pacrep='pacman -Si'         # 显示软件仓库中某软件包的信息
 alias pacreps='pacman -Ss'        # 在软件仓库搜索软件包
 alias pacloc='pacman -Qi'         # 显示本地数据库中某软件包的信息
 alias paclocs='pacman -Qs'        # 在本地数据库搜索软件包
+alias pacfile='pacman -Qo'        # 根据文件搜索软件包 
 alias pacmir='sudo pacman -Syy'   # 强制刷新软件仓库信息
 
 export PKG_CONFIG_PATH=$HOME/local/pkgconfig${PKG_CONFIG_PATH:+:}${PKG_CONFIG_PATH:-}
