@@ -40,5 +40,4 @@ alias paclocs='pacman -Qs'        # 在本地数据库搜索软件包
 alias pacfile='pacman -Qo'        # 根据文件搜索软件包 
 alias pacmir='sudo pacman -Syy'   # 强制刷新软件仓库信息
 
-export PKG_CONFIG_PATH=$HOME/local/pkgconfig${PKG_CONFIG_PATH:+:}${PKG_CONFIG_PATH:-}
-eval `dircolors ~/.dir_colors/dircolors`
+[[ $(command -v dircolors) ]] && eval `dircolors ~/.dir_colors/dircolors`
