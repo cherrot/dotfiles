@@ -26,6 +26,7 @@ alias irssi='TERM=screen-256color irssi'
 #alias gpush='git push origin' #use ggpush
 alias lsport='lsof -Pnl +M -i4'
 #alias lsport6='lsof -Pnl +M -i6'
+alias vim=nvim
 
 alias pacupg='sudo pacman -Syu'   # 同步软件仓库信息然后升级系统
 alias aurupg='yaourt -Syu --aur'   # 同步软件仓库信息然后升级系统
