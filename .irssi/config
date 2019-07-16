@@ -17,7 +17,6 @@ chatnets = {
 channels = (
   { name = "#ubuntu-cn"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#archlinux-cn"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#elixir-lang"; chatnet = "freenode"; autojoin = "yes"; },
 );
 
 settings = {
