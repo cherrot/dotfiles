@@ -1,3 +1,4 @@
+#!/bin/sh
 #to enable fcitx in archlinux
 #export LANG=zh_CN.UTF-8
 #according to arch wiki
@@ -9,3 +10,6 @@ export XMODIFIERS="@im=fcitx"
 #enable fcitx for games built on libSDL
 #however it does not work at all
 export SDL_IM_MODULE=fcitx
+
+#xrandr --setmonitor OverlayDisplay auto HDMI-0,DP-1
+#xrandr --listmonitors > /tmp/xrand.output
