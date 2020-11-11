@@ -1,6 +1,9 @@
 [user]
 	name = cherrot
 	email = cherrotluo@gmail.com
+	signingkey = 0373EEBB470E230F
+[format]
+	signOff = true
 [diff]
 	tool = vimdiff
 [merge]
@@ -13,3 +16,7 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[commit]
+	gpgsign = true
+[pull]
+	ff = only

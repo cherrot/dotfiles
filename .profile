@@ -1,5 +1,7 @@
 export GOPATH=~/go
 export PATH=$PATH:/usr/local/sbin:"$GOPATH/bin":$HOME/bin
+export GOPROXY=https://goproxy.io      # 配置go module代理，绕过GFW下载golang.org下的package
+export GOPRIVATE=git-pd.megvii-inc.com,go.megvii-inc.com # gitlab域名下的模块绕过GOPROXY
 
 #export http_proxy=http://user:pass%2B%2B@host:port/
 #export https_proxy=$http_proxy
@@ -15,9 +17,9 @@ export LESS_TERMCAP_so=$'\E[44;33m'       # begin standout-mode
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;33m'       # begin underline
 
-[[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper.sh
-wrapper_osx=$HOME/Library/Python/2.7/bin/virtualenvwrapper.sh
-[[ -f $wrapper_osx ]] && source $wrapper_osx
+# [[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper.sh
+# wrapper_osx=$HOME/Library/Python/2.7/bin/virtualenvwrapper.sh
+# [[ -f $wrapper_osx ]] && source $wrapper_osx
 
 #Aliases: 
 #
@@ -26,7 +28,7 @@ alias irssi='TERM=screen-256color irssi'
 #alias gpush='git push origin' #use ggpush
 alias lsport='lsof -Pnl +M -i4'
 #alias lsport6='lsof -Pnl +M -i6'
-alias vim=nvim
+# alias vim=nvim
 
 alias pacupg='sudo pacman -Syu'   # 同步软件仓库信息然后升级系统
 alias aurupg='yaourt -Syu --aur'   # 同步软件仓库信息然后升级系统
@@ -42,3 +44,6 @@ alias pacfile='pacman -Qo'        # 根据文件搜索软件包
 alias pacmir='sudo pacman -Syy'   # 强制刷新软件仓库信息
 
 [[ $(command -v dircolors) && -d ~/.dir_colors ]] && eval `dircolors ~/.dir_colors/dircolors`
+
+alias tar='COPYFILE_DISABLE=1 tar' # For MacOS
+alias sed=gsed  # Use gnu-sed in MacOS
