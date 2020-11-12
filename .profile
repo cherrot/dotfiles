@@ -43,7 +43,11 @@ alias paclocs='pacman -Qs'        # 在本地数据库搜索软件包
 alias pacfile='pacman -Qo'        # 根据文件搜索软件包 
 alias pacmir='sudo pacman -Syy'   # 强制刷新软件仓库信息
 
-[[ $(command -v dircolors) && -d ~/.dir_colors ]] && eval `dircolors ~/.dir_colors/dircolors`
+#[[ $(command -v dircolors) && -d ~/.dir_colors ]] && eval `dircolors ~/.dir_colors/dircolors`
 
-alias tar='COPYFILE_DISABLE=1 tar' # For MacOS
-alias sed=gsed  # Use gnu-sed in MacOS
+#alias tar='COPYFILE_DISABLE=1 tar' # For MacOS
+#alias sed=gsed  # Use gnu-sed in MacOS
+
+export EDITOR=vim
+export TERMINAL=alacritty
+export GPG_TTY=$(tty)
