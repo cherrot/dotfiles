@@ -1,7 +1,6 @@
 #!/bin/sh
-#to enable fcitx in archlinux
+
 #export LANG=zh_CN.UTF-8
-#according to arch wiki
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 # Wine need this:
@@ -14,3 +13,4 @@ export SDL_IM_MODULE=fcitx
 #xrandr --setmonitor OverlayDisplay auto HDMI-0,DP-1
 #xrandr --listmonitors > /tmp/xrand.output
 xrandr --output HDMI-0 --scale 1.25x1.25
+xset r rate 200 25
