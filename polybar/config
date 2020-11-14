@@ -2,7 +2,7 @@
 enable-ipc = true
 monitor = HDMI-0
 width = 100%
-height = 43
+height = 40
 dpi = 192
 
 background = #1f1f1f
@@ -16,36 +16,29 @@ padding-right = 0
 module-margin-left = 3
 module-margin-right = 3
 
-
 separator = |
 
-;font-0 = NotoSans-Regular:size=19;-1
-
-;font-0 = Misc\ Termsynu:size=19:antialias=false;3
-;font-0 = NotoSans-Regular:size=10;2
-;font-1 = Material\ Icons:size=10;0
-;font-2 = Misc\ Termsynu:size=10;-2
-;font-3 = FontAwesome:size=9;0
-
-font-0 = NotoSans-Regular:size=9;0
-font-1 = Material\ Icons:size=11;2
-font-2 = xos4\ Terminus:size=14;0
+font-0 = Noto Sans CJK:size=9;0
+font-1 = Material Icons:size=11;2
+font-2 = xos4 Terminus:size=14;0
 font-3 = Siji:pixelsize=11;1
-font-4 = FontAwesome:size=11;0
+; font-4 = FontAwesome:size=9;0
+font-4 = Font Awesome 5 Free Solid:pixelsize=11;0
+font-5 = Font Awesome 5 Free:pixelsize=11;0
+font-6 = Font Awesome 5 Brands:pixelsize=11;0
 
+modules-left = i3 
+modules-center = 
+modules-right = cpu memory temperature filesystem xkeyboard volume wireless-network battery date powermenu
 
-modules-left = mpd i3 
-modules-right = cpu memory temperature filesystem xkeyboard volume wireless-network consumation  battery date        
-
-wm-restack = i3
-
-tray-position = right 
+tray-position = center 
 tray-scale = 1.0
 ;tray-transparent = true
 tray-background = ${self.background}
 tray-maxsize = 64
+; tray-offset-y = 0
 
-tray-offset-y = 0
+; wm-restack = i3
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -54,6 +47,7 @@ overline-size = 10
 overline-color = ${self.background}
 underline-size = 2
 underline-color = ${self.background}
+
 
 [bar/bottom]
 monitor = HDMI-0
@@ -76,24 +70,20 @@ padding-right = 4
 module-margin-left = 0 
 module-margin-right = 6
 
-;font-0 = NotoSans-Regular:size=10;0
-font-0 = NotoSans-Regular:size=9;0
+font-0 = Noto Sans CJK:size=9;0
 font-1 = Material\ Icons:size=11;2
 font-2 = xos4\ Terminus:size=14;0
 font-3 = Siji:pixelsize=11;1
-font-4 = FontAwesome:size=11;0
+; font-4 = FontAwesome:size=11;0
+font-4 = Font Awesome 5 Free Solid:pixelsize=11;0
+font-5 = Font Awesome 5 Free:pixelsize=11;0
+font-6 = Font Awesome 5 Brands:pixelsize=11;0
 
-modules-left = i3 spotify 
-modules-right = cpu memory temperature filesystem xkeyboard volume wireless-network consumation  battery date        
-#modules-right = cpu memory  filesystem volume backlight   battery date
+modules-left = i3
+modules-center = spotify mpd
+modules-right = cpu memory temperature filesystem xkeyboard volume wireless-network date        
 
-tray-position = right 
-tray-scale = 1.0
-;tray-transparent = true
-tray-background = ${self.background}
-tray-maxsize = 64
 
-tray-offset-y = 0
 [module/backlight]
 type = internal/backlight
 format = <label>
@@ -116,6 +106,13 @@ bar-fill-foreground = #c9665e
 bar-empty = ─
 bar-empty-font = 3
 bar-empty-foreground = #44
+
+[module/xkeyboard]
+type = internal/xkeyboard
+
+; List of indicators to ignore
+blacklist-0 = num lock
+blacklist-1 = scroll lock
 
 [module/consumation]
 type = custom/script
@@ -229,7 +226,7 @@ label-empty-padding = 1
 
 [module/cpu]
 type = internal/cpu
-interval = 0.5
+interval = 1
 format = <label> <ramp-coreload>
 label = CPU
 ramp-coreload-0 = ▁
@@ -311,7 +308,7 @@ bar-progress-empty-foreground = #44
 [module/wireless-network]
 type = internal/network
 ;interface = enp4s0
-interface = wlp5s0
+interface = wlp27s0
 interval = 1.0
 ping-interval = 10
 
@@ -334,14 +331,15 @@ animation-packetloss-framerate = 500
 
 
 [module/volume]
-type = internal/volume
-;speaker-mixer = Speaker
-;headphone-mixer = Headphone
-:headphone-id = 9
+type = internal/pulseaudio
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+interval = 5
 
 format-volume = <ramp-volume> <label-volume>
 label-muted =   muted
-label-muted-foreground = #66
+label-muted-foreground = #666
 
 ramp-volume-0 = 
 ramp-volume-1 = 
@@ -354,6 +352,7 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
+mount-1 = /home
 
 label-mounted =  %mountpoint%: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
@@ -369,9 +368,9 @@ label-open = 
 label-close = 
 label-separator = |
 
-menu-0-0 = Terminate WM
+menu-0-0 = Suspend
 menu-0-0-foreground = #fba922
-menu-0-0-exec = bspc quit -1
+menu-0-0-exec = systemctl suspend
 menu-0-1 = Reboot
 menu-0-1-foreground = #fba922
 menu-0-1-exec = menu_open-1
@@ -384,11 +383,11 @@ menu-1-0-foreground = #fba922
 menu-1-0-exec = menu_open-0
 menu-1-1 = Reboot
 menu-1-1-foreground = #fba922
-menu-1-1-exec = sudo reboot
+menu-1-1-exec = systemctl reboot
 
 menu-2-0 = Power off
 menu-2-0-foreground = #fba922
-menu-2-0-exec = sudo poweroff
+menu-2-0-exec = systemctl poweroff
 menu-2-1 = Cancel
 menu-2-1-foreground = #fba922
 menu-2-1-exec = menu_open-0
@@ -402,16 +401,17 @@ date = %%{F#999}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 5
+thermal-zone = 0
 warn-temperature = 65
+interval = 2
 
 format = <ramp> <label>
 ;format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 ;format-warn-underline = ${self.format-underline}
 
-label = %temperature%
-label-warn = HOT! %temperature%
+label = %temperature-c%
+label-warn = HOT! %temperature-c%
 label-warn-foreground = #f00
 
 ramp-0 = 
@@ -504,11 +504,9 @@ label-separator-foreground = #ffb52a
 
 [module/spotify]
 type = custom/script
-interval = 1
+interval = 2
 format-prefix = "  "  
 format = <label>
 exec = python   $HOME/.config/polybar/spotify.py  -f '{play_pause} {song} - {artist} - {album}'
 
 format-underline = #1db954
-
-; vim:ft=dosini

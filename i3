@@ -53,7 +53,7 @@ bindsym $mod+Shift+q kill
 # installed.
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+d exec --no-startup-id rofi -combi-modi window#drun -show combi -modi combi -show-icons
-bindsym $mod+w exec --no-startup-id rofi -show window
+bindsym $mod+Shift+d exec --no-startup-id rofi -show window
 bindsym $mod+g exec --no-startup-id rofi -show emoji -modi emoji
 
 # change focus
@@ -99,7 +99,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -192,12 +192,14 @@ bindsym $mod+Mod4+n exec ~/.fehbg
 bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+n exec --no-startup-id chromium 
 bindsym $mod+m exec --no-startup-id nautilus
+bindsym $mod+space exec albert toggle
 
 #############################################################################
 # autostart
 #############################################################################
 exec picom
 exec fcitx
+exec dunst # notification
 exec redshift-gtk
 exec flameshot
 exec_always ~/.fehbg
@@ -205,3 +207,4 @@ exec_always ~/.fehbg
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 #export SSH_AUTH_SOCK
 exec xset r rate 200 25
+exec albert # app launcher
