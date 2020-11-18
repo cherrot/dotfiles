@@ -13,4 +13,12 @@ export SDL_IM_MODULE=fcitx
 #xrandr --setmonitor OverlayDisplay auto HDMI-0,DP-1
 #xrandr --listmonitors > /tmp/xrand.output
 xrandr --output HDMI-0 --scale 1.25x1.25
-xset r rate 200 25
+# xrandr --output HDMI-0 --mode 2560x1440
+# `xset r` need be executed a few seconds later (sleep 5), so I put it in i3 config, after a time consuming command
+# xset r rate 200 25
+
+# HiDPI settings
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+# Comment the following 2 lines when switching to Gnome
+export GDK_SCALE=2
+export GDK_DPI_SCALE=0.5

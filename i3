@@ -105,7 +105,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+Shift+a focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -197,14 +197,17 @@ bindsym $mod+space exec albert toggle
 #############################################################################
 # autostart
 #############################################################################
+# https://wiki.archlinux.org/index.php/GNOME/Keyring#Using_the_keyring_outside_GNOME
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
+# exec /usr/lib/gsd-xsettings
+
 exec picom
 exec fcitx
 exec dunst # notification
 exec redshift-gtk
 exec flameshot
 exec_always ~/.fehbg
-# https://wiki.archlinux.org/index.php/GNOME/Keyring#Using_the_keyring_outside_GNOME
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 #export SSH_AUTH_SOCK
+# see also: https://wiki.archlinux.org/index.php/Power_management#Sleep_hooks
 exec xset r rate 200 25
 exec albert # app launcher
