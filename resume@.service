@@ -1,0 +1,13 @@
+# https://wiki.archlinux.org/index.php/Power_management#Sleep_hooks
+# /etc/systemd/system/resume@.service
+[Unit]
+Description=User resume actions
+After=suspend.target
+
+[Service]
+User=%I
+Type=simple
+ExecStart=sleep 3 ; xset r rate 200 25
+
+[Install]
+WantedBy=suspend.target
