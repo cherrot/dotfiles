@@ -208,6 +208,6 @@ exec redshift-gtk
 exec flameshot
 exec_always ~/.fehbg
 #export SSH_AUTH_SOCK
-# see also: https://wiki.archlinux.org/index.php/Power_management#Sleep_hooks
-exec xset r rate 200 25
+# Append `-ardelay 200 -arinterval 40` to /usr/bin/Xorg to avoid typematic deday being reset after suspend/resume
+# exec xset r rate 200 25
 exec albert # app launcher
