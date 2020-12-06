@@ -203,7 +203,7 @@ exec fcitx
 exec dunst # notification
 exec redshift-gtk
 exec flameshot
-exec_always ~/.fehbg
+# exec_always ~/.fehbg
 #export SSH_AUTH_SOCK
 # Append `-ardelay 200 -arinterval 40` to /usr/bin/Xorg to avoid typematic deday being reset after suspend/resume
 # exec xset r rate 200 25
