@@ -197,9 +197,6 @@ bindsym $mod+space exec albert toggle
 #############################################################################
 # autostart
 #############################################################################
-# https://wiki.archlinux.org/index.php/GNOME/Keyring#Using_the_keyring_outside_GNOME
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
-# exec /usr/lib/gsd-xsettings
 
 exec picom
 exec fcitx
@@ -211,3 +208,4 @@ exec_always ~/.fehbg
 # Append `-ardelay 200 -arinterval 40` to /usr/bin/Xorg to avoid typematic deday being reset after suspend/resume
 # exec xset r rate 200 25
 exec albert # app launcher
+exec blueman-applet
