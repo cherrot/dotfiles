@@ -188,22 +188,32 @@ bar {
 #############################################################################
 # custom binding
 #############################################################################
-bindsym $mod+Mod4+n exec ~/.fehbg
+bindsym $mod+Mod4+n exec change-wallpaper.sh
+bindsym $mod+Mod4+m exec --no-startup-id ~/repo/reddit-fetch/run.sh
 bindsym $mod+Tab workspace back_and_forth
+workspace_auto_back_and_forth yes
 bindsym $mod+n exec --no-startup-id chromium 
 bindsym $mod+m exec --no-startup-id nautilus
 bindsym $mod+space exec albert toggle
 
 #############################################################################
+# custom window setting
+#############################################################################
+for_window [class="GoldenDict"] floating enable
+for_window [class="mpv"] floating enable
+# image viewer, laggy and glitchy in float window, I don't know why (maybe picom's fault?)
+# for_window [class="Eog"] floating enable
+for_window [class="Org.gnome.NautilusPreviewer"] floating enable, move position 1000 250
+
+#############################################################################
 # autostart
 #############################################################################
-
 exec picom
 exec fcitx
 exec dunst # notification
 exec redshift-gtk
 exec flameshot
-# exec_always ~/.fehbg
+exec change-wallpaper.sh
 #export SSH_AUTH_SOCK
 # Append `-ardelay 200 -arinterval 40` to /usr/bin/Xorg to avoid typematic deday being reset after suspend/resume
 # exec xset r rate 200 25
