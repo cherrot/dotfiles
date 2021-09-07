@@ -52,15 +52,14 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec --no-startup-id rofi -combi-modi window#drun -show combi -modi combi -show-icons
+bindsym $mod+d exec --no-startup-id rofi -show combi
 bindsym $mod+Shift+d exec --no-startup-id rofi -show window
-bindsym $mod+g exec --no-startup-id rofi -show emoji -modi emoji
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -69,10 +68,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -81,7 +80,8 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+semicolon split h
+# bindsym $mod+semicolon split h
+bindsym $mod+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -99,7 +99,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-# bindsym $mod+space focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -192,9 +192,8 @@ bindsym $mod+Mod4+n exec change-wallpaper.sh
 bindsym $mod+Mod4+m exec --no-startup-id ~/repo/reddit-fetch/run.sh
 bindsym $mod+Tab workspace back_and_forth
 workspace_auto_back_and_forth yes
-bindsym $mod+n exec --no-startup-id chromium 
+bindsym $mod+n exec --no-startup-id google-chrome-stable
 bindsym $mod+m exec --no-startup-id nautilus
-bindsym $mod+space exec albert toggle
 
 #############################################################################
 # custom window setting
@@ -217,5 +216,4 @@ exec change-wallpaper.sh
 #export SSH_AUTH_SOCK
 # Append `-ardelay 200 -arinterval 40` to /usr/bin/Xorg to avoid typematic deday being reset after suspend/resume
 # exec xset r rate 200 25
-exec albert # app launcher
 exec blueman-applet
