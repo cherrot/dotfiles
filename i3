@@ -194,6 +194,7 @@ bindsym $mod+Tab workspace back_and_forth
 workspace_auto_back_and_forth yes
 bindsym $mod+n exec --no-startup-id google-chrome-stable
 bindsym $mod+m exec --no-startup-id nautilus
+bindsym $mod+Shift+s exec flameshot gui
 
 #############################################################################
 # custom window setting
