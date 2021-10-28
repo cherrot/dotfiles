@@ -210,11 +210,13 @@ for_window [class="Org.gnome.NautilusPreviewer"] floating enable, move position 
 #############################################################################
 exec picom
 exec fcitx
-exec dunst # notification
+# exec dunst # notification
+exec deadd-notification-center
 exec redshift-gtk
 exec flameshot
+exec blueman-applet
 exec change-wallpaper.sh
+
 #export SSH_AUTH_SOCK
 # Append `-ardelay 200 -arinterval 40` to /usr/bin/Xorg to avoid typematic deday being reset after suspend/resume
 # exec xset r rate 200 25
-exec blueman-applet
