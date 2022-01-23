@@ -189,7 +189,7 @@ bar {
 # custom binding
 #############################################################################
 bindsym $mod+Mod4+n exec change-wallpaper.sh
-bindsym $mod+Mod4+m exec --no-startup-id ~/repo/reddit-fetch/run.sh
+bindsym $mod+Mod4+m exec --no-startup-id alacritty -e ~/repo/reddit-fetch/run.sh
 bindsym $mod+Tab workspace back_and_forth
 workspace_auto_back_and_forth yes
 bindsym $mod+n exec --no-startup-id google-chrome-stable
@@ -204,6 +204,8 @@ for_window [class="mpv"] floating enable
 # image viewer, laggy and glitchy in float window, I don't know why (maybe picom's fault?)
 # for_window [class="Eog"] floating enable
 for_window [class="Org.gnome.NautilusPreviewer"] floating enable, move position 1000 250
+# EA game - it takes two's starter will try and resize the Windows in an infinite loop
+for_window [title="Origin"] floating enable
 
 #############################################################################
 # autostart
