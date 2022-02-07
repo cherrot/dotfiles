@@ -4,13 +4,14 @@
 	signingkey = 0373EEBB470E230F
 [format]
 	signOff = true
+[core]
+	autocrlf = input
+	ignorecase = false
 [diff]
 	tool = vimdiff
 [merge]
 	tool = vimdiff
         #conflictstyle = diff3
-[core]
-	ignorecase = false
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
@@ -20,3 +21,4 @@
 	gpgsign = true
 [pull]
 	ff = only
+	rebase = true
