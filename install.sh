@@ -7,7 +7,6 @@ set -o pipefail
 OS=$(uname)
 
 stow shell
-stow git
 stow tig
 
 if [[ "${OS}" == "Linux" ]]; then
@@ -19,5 +18,6 @@ if [[ "${OS}" == "Linux" ]]; then
     stow Xorg
     stow -t /etc _etc
 elif [[ "${OS}" == "Darwin" ]]; then
+    stow git
     stow alacritty.macos
 fi
