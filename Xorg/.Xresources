@@ -1,5 +1,5 @@
 # https://dougie.io/linux/hidpi-retina-i3wm/
-# I thins DPI=192 with a `xrandr --output HDMI-0 --scale 1.25x1.25` is the most comfortable config
+# To me DPI=192 with a `xrandr --output HDMI-0 --scale 1.25x1.25` is the most comfortable config
 # (font, gtk apps, steam fonts, etc). 
 # Otherwise try DPI=144, it works good too.
 Xft.dpi: 192
