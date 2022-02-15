@@ -200,7 +200,7 @@ bindsym $mod+Shift+s exec flameshot gui
 # custom window setting
 #############################################################################
 for_window [class="GoldenDict"] floating enable
-for_window [class="mpv"] floating enable
+# for_window [class="mpv"] floating enable
 # image viewer, laggy and glitchy in float window, I don't know why (maybe picom's fault?)
 # for_window [class="Eog"] floating enable
 for_window [class="Org.gnome.NautilusPreviewer"] floating enable, move position 1000 250
@@ -210,14 +210,15 @@ for_window [title="Origin"] floating enable
 #############################################################################
 # autostart
 #############################################################################
-exec picom
-exec fcitx
+exec --no-startup-id picom
+#exec --no-startup-id fcitx
+exec --no-startup-id fcitx5 -d
 # exec dunst # notification
-exec deadd-notification-center
-exec redshift-gtk
-exec flameshot
-exec blueman-applet
-exec change-wallpaper.sh
+exec --no-startup-id deadd-notification-center
+exec --no-startup-id redshift-gtk
+exec --no-startup-id flameshot
+exec --no-startup-id blueman-applet
+# exec change-wallpaper.sh
 
 #export SSH_AUTH_SOCK
 # Append `-ardelay 200 -arinterval 40` to /usr/bin/Xorg to avoid typematic deday being reset after suspend/resume
