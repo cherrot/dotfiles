@@ -24,7 +24,7 @@ font pango:monospace 9
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -188,13 +188,19 @@ bar {
 #############################################################################
 # custom binding
 #############################################################################
-bindsym $mod+Mod4+n exec change-wallpaper.sh
-bindsym $mod+Mod4+m exec --no-startup-id alacritty -e ~/repo/reddit-fetch/run.sh
+# use variety to change wallpapers by interval.
+# bindsym $mod+Mod4+n exec change-wallpaper.sh
+# bindsym $mod+Mod4+m exec --no-startup-id alacritty -e ~/repo/reddit-fetch/run.sh
+bindsym $mod+Mod4+n exec --no-startup-id variety -n
+bindsym $mod+Mod4+p exec --no-startup-id variety -p
 bindsym $mod+Tab workspace back_and_forth
 workspace_auto_back_and_forth yes
 bindsym $mod+n exec --no-startup-id google-chrome-stable
 bindsym $mod+m exec --no-startup-id nautilus
-bindsym $mod+Shift+s exec flameshot gui
+bindsym $mod+Shift+s exec --no-startup-id flameshot gui
+# https://wiki.archlinux.org/title/Session_lock
+# see also /etc/systemd/system/suspend@.service
+bindsym $mod+Mod4+l exec --no-startup-id i3lock-fancy-rapid 10 5
 
 #############################################################################
 # custom window setting
@@ -211,15 +217,14 @@ for_window [title="Origin"] floating enable
 # autostart
 #############################################################################
 exec --no-startup-id picom
-#exec --no-startup-id fcitx
 exec --no-startup-id fcitx5 -d
-# exec dunst # notification
 exec --no-startup-id deadd-notification-center
 exec --no-startup-id redshift-gtk
 exec --no-startup-id flameshot
 exec --no-startup-id blueman-applet
 # exec change-wallpaper.sh
+exec --no-startup-id variety
 
 #export SSH_AUTH_SOCK
-# Append `-ardelay 200 -arinterval 40` to /usr/bin/Xorg to avoid typematic deday being reset after suspend/resume
+# Append `-ardelay 200 -arinterval 40` to /usr/bin/Xorg to avoid typematic delay being reset after suspend/resume
 # exec xset r rate 200 25
