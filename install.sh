@@ -10,15 +10,13 @@ stow shell
 stow tig
 
 if [[ "${OS}" == "Linux" ]]; then
+    stow dotconfig
     stow alacritty.linux
     stow dmrc
-    stow fontconfig
-    stow i3
-    stow picom
-    stow rofi
     stow Xorg
     stow -t /etc _etc
 elif [[ "${OS}" == "Darwin" ]]; then
+    stow .config
     stow git
     stow alacritty.macos
 fi

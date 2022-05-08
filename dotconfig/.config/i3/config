@@ -183,7 +183,29 @@ bindsym $mod+r mode "resize"
 bar {
         #status_command i3status
         i3bar_command $HOME/.config/polybar/launch.sh
+        height 26
 }
+
+#######################
+# Custom UI Settings
+######################
+# Only enable gaps on a workspace when there is at least one container
+# smart_gaps on
+gaps inner 7
+gaps outer 0
+gaps top 20
+
+# borders
+# Activate smart borders (always)
+smart_borders on
+# class                 border  backgr. text    indicator child_border
+client.focused_inactive #131416 #131416 #131416 #131416 #131416
+client.unfocused        #131416 #131416 #131416 #131416 #131416
+client.focused          #FFFFFF #FFFFFF #FFFFFF #FFFFFF #FFFFFF
+for_window [class="^.*"] border pixel 3
+
+# make floating windows smaller
+# floating_maximum_size 1920x1080
 
 #############################################################################
 # custom binding
