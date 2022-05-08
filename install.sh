@@ -14,6 +14,7 @@ if [[ "${OS}" == "Linux" ]]; then
     stow dmrc
     stow fontconfig
     stow i3
+    stow picom
     stow rofi
     stow Xorg
     stow -t /etc _etc
