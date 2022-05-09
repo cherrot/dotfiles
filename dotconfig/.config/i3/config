@@ -183,7 +183,6 @@ bindsym $mod+r mode "resize"
 bar {
         #status_command i3status
         i3bar_command $HOME/.config/polybar/launch.sh
-        height 26
 }
 
 #######################
@@ -191,9 +190,9 @@ bar {
 ######################
 # Only enable gaps on a workspace when there is at least one container
 # smart_gaps on
-gaps inner 7
+gaps inner 8
 gaps outer 0
-gaps top 20
+gaps top 19
 
 # borders
 # Activate smart borders (always)
