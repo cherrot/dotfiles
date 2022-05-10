@@ -198,8 +198,8 @@ gaps top 19
 # Activate smart borders (always)
 smart_borders on
 # class                 border  backgr. text    indicator child_border
-client.focused_inactive #131416 #131416 #131416 #131416 #131416
-client.unfocused        #131416 #131416 #131416 #131416 #131416
+client.focused_inactive #131416 #131416 #888888 #131416 #131416
+client.unfocused        #131416 #131416 #888888 #131416 #131416
 client.focused          #FFFFFF #FFFFFF #FFFFFF #FFFFFF #FFFFFF
 for_window [class="^.*"] border pixel 3
 
