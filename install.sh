@@ -16,7 +16,7 @@ if [[ "${OS}" == "Linux" ]]; then
     stow Xorg
     stow -t /etc _etc
 elif [[ "${OS}" == "Darwin" ]]; then
-    stow .config
+    # stow dotconfig
     stow git
     stow alacritty.macos
 fi
