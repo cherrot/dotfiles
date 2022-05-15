@@ -12,7 +12,6 @@ stow tig
 if [[ "${OS}" == "Linux" ]]; then
     stow dotconfig
     stow alacritty.linux
-    stow dmrc
     stow Xorg
     stow -t /etc _etc
 elif [[ "${OS}" == "Darwin" ]]; then
