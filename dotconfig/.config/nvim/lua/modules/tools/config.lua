@@ -6,6 +6,7 @@ function config.telescope()
 	vim.cmd([[packadd telescope-project.nvim]])
 	vim.cmd([[packadd telescope-frecency.nvim]])
 	vim.cmd([[packadd telescope-zoxide]])
+	vim.cmd([[packadd telescope-file-browser.nvim]])
 
 	require("telescope").setup({
 		defaults = {
@@ -50,6 +51,7 @@ function config.telescope()
 	require("telescope").load_extension("project")
 	require("telescope").load_extension("zoxide")
 	require("telescope").load_extension("frecency")
+	require("telescope").load_extension("file_browser")
 end
 
 function config.trouble()
@@ -145,7 +147,7 @@ function config.which_key()
 		},
 
 		window = {
-			border = "none", 
+			border = "none",
 			position = "bottom",
 			margin = { 1, 0, 1, 0 },
 			padding = { 1, 1, 1, 1 },

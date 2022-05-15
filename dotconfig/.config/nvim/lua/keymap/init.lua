@@ -6,22 +6,25 @@ require("keymap.config")
 
 local plug_map = {
 	-- Bufferline
+	-- ["n|<A-q>"] = map_cmd(":Bwipeout<CR>"), -- <A-q> to close buffer
 	["n|gb"] = map_cr("BufferLinePick"):with_noremap():with_silent(),
-	["n|<A-j>"] = map_cr("BufferLineCycleNext"):with_noremap():with_silent(),
-	["n|<A-k>"] = map_cr("BufferLineCyclePrev"):with_noremap():with_silent(),
-	["n|<A-S-j>"] = map_cr("BufferLineMoveNext"):with_noremap():with_silent(),
-	["n|<A-S-k>"] = map_cr("BufferLineMovePrev"):with_noremap():with_silent(),
+	["n|gt"] = map_cr("BufferLineCycleNext"):with_noremap():with_silent(),
+	["n|gT"] = map_cr("BufferLineCyclePrev"):with_noremap():with_silent(),
+	["n|]b"] = map_cr("BufferLineCycleNext"):with_noremap():with_silent(),
+	["n|[b"] = map_cr("BufferLineCyclePrev"):with_noremap():with_silent(),
+	["n|}b"] = map_cr("BufferLineMoveNext"):with_noremap():with_silent(),
+	["n|{b"] = map_cr("BufferLineMovePrev"):with_noremap():with_silent(),
 	["n|<leader>be"] = map_cr("BufferLineSortByExtension"):with_noremap(),
 	["n|<leader>bd"] = map_cr("BufferLineSortByDirectory"):with_noremap(),
-	["n|<A-1>"] = map_cr("BufferLineGoToBuffer 1"):with_noremap():with_silent(),
-	["n|<A-2>"] = map_cr("BufferLineGoToBuffer 2"):with_noremap():with_silent(),
-	["n|<A-3>"] = map_cr("BufferLineGoToBuffer 3"):with_noremap():with_silent(),
-	["n|<A-4>"] = map_cr("BufferLineGoToBuffer 4"):with_noremap():with_silent(),
-	["n|<A-5>"] = map_cr("BufferLineGoToBuffer 5"):with_noremap():with_silent(),
-	["n|<A-6>"] = map_cr("BufferLineGoToBuffer 6"):with_noremap():with_silent(),
-	["n|<A-7>"] = map_cr("BufferLineGoToBuffer 7"):with_noremap():with_silent(),
-	["n|<A-8>"] = map_cr("BufferLineGoToBuffer 8"):with_noremap():with_silent(),
-	["n|<A-9>"] = map_cr("BufferLineGoToBuffer 9"):with_noremap():with_silent(),
+	["n|1g"] = map_cr("BufferLineGoToBuffer 1"):with_noremap():with_silent(),
+	["n|2g"] = map_cr("BufferLineGoToBuffer 2"):with_noremap():with_silent(),
+	["n|3g"] = map_cr("BufferLineGoToBuffer 3"):with_noremap():with_silent(),
+	["n|4g"] = map_cr("BufferLineGoToBuffer 4"):with_noremap():with_silent(),
+	["n|5g"] = map_cr("BufferLineGoToBuffer 5"):with_noremap():with_silent(),
+	["n|6g"] = map_cr("BufferLineGoToBuffer 5"):with_noremap():with_silent(),
+	["n|7g"] = map_cr("BufferLineGoToBuffer 7"):with_noremap():with_silent(),
+	["n|8g"] = map_cr("BufferLineGoToBuffer 8"):with_noremap():with_silent(),
+	["n|9g"] = map_cr("BufferLineGoToBuffer 9"):with_noremap():with_silent(),
 	-- Packer
 	["n|<leader>ps"] = map_cr("PackerSync"):with_silent():with_noremap():with_nowait(),
 	["n|<leader>pu"] = map_cr("PackerUpdate"):with_silent():with_noremap():with_nowait(),
@@ -42,26 +45,26 @@ local plug_map = {
 	["n|gd"] = map_cr("Lspsaga preview_definition"):with_noremap():with_silent(),
 	["n|gD"] = map_cr("lua vim.lsp.buf.definition()"):with_noremap():with_silent(),
 	["n|gh"] = map_cr("lua vim.lsp.buf.references()"):with_noremap():with_silent(),
-	["n|<A-d>"] = map_cu('lua require("FTerm").toggle()'):with_noremap():with_silent(),
-	["t|<A-d>"] = map_cu([[<C-\><C-n><CMD>lua require("FTerm").toggle()]]):with_noremap():with_silent(),
-	["t|<A-S-d>"] = map_cu([[<C-\><C-n><CMD>lua require("FTerm").exit()]]):with_noremap():with_silent(),
+	["n|<Leader>t"] = map_cu('lua require("FTerm").toggle()'):with_noremap():with_silent(),
+	["t|<Leader>t"] = map_cu([[<C-\><C-n><CMD>lua require("FTerm").toggle()]]):with_noremap():with_silent(),
+	["t|<Leader><Leeader>t"] = map_cu([[<C-\><C-n><CMD>lua require("FTerm").exit()]]):with_noremap():with_silent(),
 	["n|<Leader>g"] = map_cu("lua require('FTerm').run('gitui')"):with_noremap():with_silent(),
 	["n|<Leader>G"] = map_cu("Git"):with_noremap():with_silent(),
 	["n|gps"] = map_cr("G push"):with_noremap():with_silent(),
 	["n|gpl"] = map_cr("G pull"):with_noremap():with_silent(),
 	-- Plugin trouble
-	["n|gt"] = map_cr("TroubleToggle"):with_noremap():with_silent(),
+	["n|<leader>xx"] = map_cr("TroubleToggle"):with_noremap():with_silent(),
+	["n|<leader>xd"] = map_cr("TroubleToggle document_diagnostics"):with_noremap():with_silent(),
+	["n|<leader>xw"] = map_cr("TroubleToggle workspace_diagnostics"):with_noremap():with_silent(),
+	["n|<leader>xq"] = map_cr("TroubleToggle quickfix"):with_noremap():with_silent(),
+	["n|<leader>xl"] = map_cr("TroubleToggle loclist"):with_noremap():with_silent(),
 	["n|gR"] = map_cr("TroubleToggle lsp_references"):with_noremap():with_silent(),
-	["n|<leader>cd"] = map_cr("TroubleToggle document_diagnostics"):with_noremap():with_silent(),
-	["n|<leader>cw"] = map_cr("TroubleToggle workspace_diagnostics"):with_noremap():with_silent(),
-	["n|<leader>cq"] = map_cr("TroubleToggle quickfix"):with_noremap():with_silent(),
-	["n|<leader>cl"] = map_cr("TroubleToggle loclist"):with_noremap():with_silent(),
 	-- Plugin nvim-tree
 	["n|<C-n>"] = map_cr("NvimTreeToggle"):with_noremap():with_silent(),
 	["n|<Leader>nf"] = map_cr("NvimTreeFindFile"):with_noremap():with_silent(),
 	["n|<Leader>nr"] = map_cr("NvimTreeRefresh"):with_noremap():with_silent(),
 	-- Plugin Aerial
-	["n|<A-t>"] = map_cr("AerialToggle! right"):with_noremap():with_silent(),
+	["n|<C-t>"] = map_cr("AerialToggle! right"):with_noremap():with_silent(),
 	-- Plugin Undotree
 	["n|<Leader>u"] = map_cr("UndotreeToggle"):with_noremap():with_silent(),
 	-- Plugin Telescope
@@ -94,10 +97,9 @@ local plug_map = {
 	["n|ga"] = map_cmd("v:lua.enhance_align('nga')"):with_expr(),
 	["x|ga"] = map_cmd("v:lua.enhance_align('xga')"):with_expr(),
 	-- Plugin split-term
-	["n|<F5>"] = map_cr("VTerm"):with_noremap():with_silent(),
 	["n|<C-w>t"] = map_cr("VTerm"):with_noremap():with_silent(),
 	-- Plugin MarkdownPreview
-	["n|<F12>"] = map_cr("MarkdownPreviewToggle"):with_noremap():with_silent(),
+	["n|<F5>"] = map_cr("MarkdownPreviewToggle"):with_noremap():with_silent(),
 	-- Plugin auto_session
 	["n|<leader>ss"] = map_cu("SaveSession"):with_noremap():with_silent(),
 	["n|<leader>sr"] = map_cu("RestoreSession"):with_noremap():with_silent(),
@@ -106,7 +108,7 @@ local plug_map = {
 	["v|<leader>r"] = map_cr("SnipRun"):with_noremap():with_silent(),
 	-- Plugin dap
 	["n|<F6>"] = map_cr("lua require('dap').continue()"):with_noremap():with_silent(),
-	["n|<leader>dr"] = map_cr("lua require('dap').continue()"):with_noremap():with_silent(),
+	["n|<leader>dc"] = map_cr("lua require('dap').continue()"):with_noremap():with_silent(),
 	["n|<leader>dd"] = map_cr("lua require('dap').terminate() require('dapui').close()"):with_noremap():with_silent(),
 	["n|<leader>db"] = map_cr("lua require('dap').toggle_breakpoint()"):with_noremap():with_silent(),
 	["n|<leader>dB"] = map_cr("lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))")
@@ -125,8 +127,8 @@ local plug_map = {
 	["o|m"] = map_cu([[lua require('tsht').nodes()]]):with_silent(),
 	["c|Q"] = map_cu([[%SnipRun]]):with_silent(),
 	-- Plugin Tabout
-	["i|<A-l>"] = map_cmd([[<Plug>(TaboutMulti)]]):with_silent(),
-	["i|<A-h>"] = map_cmd([[<Plug>(TaboutBackMulti)]]):with_silent(),
+	["i|<A-x>"] = map_cmd([[<Plug>(TaboutMulti)]]):with_silent(),
+	["i|<A-z>"] = map_cmd([[<Plug>(TaboutBackMulti)]]):with_silent(),
 	-- Plugin Diffview
 	["n|<leader>D"] = map_cr("DiffviewOpen"):with_silent():with_noremap(),
 	["n|<leader><leader>D"] = map_cr("DiffviewClose"):with_silent():with_noremap(),
