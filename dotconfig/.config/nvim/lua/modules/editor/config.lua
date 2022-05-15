@@ -360,4 +360,21 @@ function config.tabout()
 	})
 end
 
+function config.imselect()
+	local is_linux = require("core.global").is_linux
+	assert(is_linux, 2)
+	if is_linux then
+		vim.cmd([[
+		let g:im_select_get_im_cmd = ["fcitx5-remote"]
+		let g:im_select_default = '1'
+		let g:ImSelectSetImCmd = {
+			\ key ->
+			\ key == 1 ? ['fcitx5-remote', '-c'] :
+			\ key == 2 ? ['fcitx5-remote', '-o'] :
+			\ execute("throw 'invalid im key'")
+			\ }
+			]])
+	end
+end
+
 return config

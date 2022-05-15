@@ -76,11 +76,11 @@ editor["phaazon/hop.nvim"] = {
 		require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
 	end,
 }
-editor["karb94/neoscroll.nvim"] = {
-	opt = true,
-	event = "BufReadPost",
-	config = conf.neoscroll,
-}
+-- editor["karb94/neoscroll.nvim"] = {
+-- 	opt = true,
+-- 	event = "BufReadPost",
+-- 	config = conf.neoscroll,
+-- }
 editor["vimlab/split-term.vim"] = { opt = true, cmd = { "Term", "VTerm" } }
 editor["akinsho/toggleterm.nvim"] = {
 	opt = true,
@@ -133,6 +133,11 @@ editor["abecodes/tabout.nvim"] = {
 editor["sindrets/diffview.nvim"] = {
 	opt = true,
 	cmd = { "DiffviewOpen" },
+}
+editor["brglng/vim-im-select"] = {
+	opt = false,
+	-- event = "BufReadPost",
+	config = conf.imselect,
 }
 
 return editor
