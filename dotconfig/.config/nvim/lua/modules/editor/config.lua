@@ -362,7 +362,6 @@ end
 
 function config.imselect()
 	local is_linux = require("core.global").is_linux
-	assert(is_linux, 2)
 	if is_linux then
 		vim.cmd([[
 		let g:im_select_get_im_cmd = ["fcitx5-remote"]

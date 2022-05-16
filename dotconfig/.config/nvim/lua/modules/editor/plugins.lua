@@ -136,7 +136,7 @@ editor["sindrets/diffview.nvim"] = {
 }
 editor["brglng/vim-im-select"] = {
 	opt = false,
-	-- event = "BufReadPost",
+	event = "BufReadPost",
 	config = conf.imselect,
 }
 
