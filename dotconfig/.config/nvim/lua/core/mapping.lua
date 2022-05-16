@@ -6,6 +6,9 @@ local map_cmd = bind.map_cmd
 -- default map
 local def_map = {
 	-- Vim map
+	["n|<Space>"] = map_cr("normal za"):with_noremap():with_silent(),
+	["n|<Tab>"] = map_cr("normal zA"):with_noremap():with_silent(),
+	["n|<S-Tab>"] = map_cr("normal zc"):with_noremap():with_silent(),
 	["n|<C-s>"] = map_cu("write"):with_noremap(),
 	["n|Y"] = map_cmd("y$"),
 	["n|D"] = map_cmd("d$"),
