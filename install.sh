@@ -7,10 +7,10 @@ set -o pipefail
 OS=$(uname)
 
 stow shell
+stow dotconfig
 stow tig
 
 if [[ "${OS}" == "Linux" ]]; then
-    stow dotconfig
     stow alacritty.linux
     stow Xorg
     stow -t /etc _etc
