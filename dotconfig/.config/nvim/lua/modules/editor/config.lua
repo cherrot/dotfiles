@@ -361,6 +361,7 @@ function config.tabout()
 end
 
 function config.imselect()
+	-- if vim.fn.executable("fcitx5-remote") == 1 then
 	local is_linux = require("core.global").is_linux
 	if is_linux then
 		vim.cmd([[

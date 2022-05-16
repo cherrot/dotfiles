@@ -8,7 +8,6 @@ OS=$(uname)
 
 stow shell
 stow dotconfig
-stow tig
 
 if [[ "${OS}" == "Linux" ]]; then
     stow alacritty.linux

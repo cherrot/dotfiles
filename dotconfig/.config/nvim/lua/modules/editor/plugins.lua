@@ -76,11 +76,11 @@ editor["phaazon/hop.nvim"] = {
 		require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
 	end,
 }
--- editor["karb94/neoscroll.nvim"] = {
--- 	opt = true,
--- 	event = "BufReadPost",
--- 	config = conf.neoscroll,
--- }
+editor["karb94/neoscroll.nvim"] = {
+	opt = true,
+	event = "BufReadPost",
+	config = conf.neoscroll,
+}
 editor["vimlab/split-term.vim"] = { opt = true, cmd = { "Term", "VTerm" } }
 editor["akinsho/toggleterm.nvim"] = {
 	opt = true,
