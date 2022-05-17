@@ -10,11 +10,13 @@ stow shell
 stow dotconfig
 
 if [[ "${OS}" == "Linux" ]]; then
-    stow alacritty.linux
     stow Xorg
     stow -t /etc _etc
+    stow alacritty.linux
+    stow kitty.linux
 elif [[ "${OS}" == "Darwin" ]]; then
     # stow dotconfig
     stow git
     stow alacritty.macos
+    stow kitty.macos
 fi
