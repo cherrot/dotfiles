@@ -17,17 +17,6 @@ function autocmd.load_autocmds()
 	local definitions = {
 		packer = {},
 		bufs = {
-			-- Reload vim config automatically
-			{
-				"BufWritePost",
-				[[$VIM_PATH/{*.vim,*.yaml,vimrc} nested source $MYVIMRC | redraw]],
-			},
-			-- Reload Vim script automatically if setlocal autoread
-			{
-				"BufWritePost,FileWritePost",
-				"*.vim",
-				[[nested if &l:autoread > 0 | source <afile> | echo 'source ' . bufname('%') | endif]],
-			},
 			{ "BufWritePre", "/tmp/*", "setlocal noundofile" },
 			{ "BufWritePre", "COMMIT_EDITMSG", "setlocal noundofile" },
 			{ "BufWritePre", "MERGE_MSG", "setlocal noundofile" },
@@ -46,11 +35,6 @@ function autocmd.load_autocmds()
 				"*",
 				[[++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif]],
 			},
-			-- Auto toggle fcitx5
-			-- {"InsertLeave", "* :silent", "!fcitx5-remote -c"},
-			-- {"BufCreate", "*", ":silent !fcitx5-remote -c"},
-			-- {"BufEnter", "*", ":silent !fcitx5-remote -c "},
-			-- {"BufLeave", "*", ":silent !fcitx5-remote -c "}
 		},
 		wins = {
 			-- Highlight current line only on focused window

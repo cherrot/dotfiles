@@ -46,7 +46,8 @@ local function load_options()
 		grepprg = "rg --hidden --vimgrep --smart-case --",
 		breakat = [[\ \	;:,!?]],
 		startofline = false,
-		whichwrap = "h,l,<,>,[,],~",
+		-- < and > mean the left/right keys in normal and visual mode. [ and ] mean the left/right arrows in insert and replace mode
+		whichwrap = "<,>,[,],~",
 		splitbelow = true,
 		splitright = true,
 		switchbuf = "useopen",
