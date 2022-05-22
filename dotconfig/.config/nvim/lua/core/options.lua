@@ -27,7 +27,6 @@ local function load_options()
 		history = 2000,
 		shada = "!,'300,<50,@100,s10,h",
 		backupskip = "/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim",
-		smarttab = true,
 		shiftround = true,
 		timeout = true,
 		ttimeout = true,
@@ -86,18 +85,22 @@ local function load_options()
 		undofile = true,
 		synmaxcol = 2500,
 		formatoptions = "1jcroql",
-		expandtab = true,
+
+		smartindent = true,
 		autoindent = true,
+		smarttab = true,
+		expandtab = true,
 		tabstop = 4,
 		shiftwidth = 4,
 		softtabstop = 4,
+
 		breakindentopt = "shift:2,min:20",
 		wrap = false,
 		linebreak = true,
 		number = true,
 		relativenumber = true,
 		foldenable = true,
-		signcolumn = "yes",
+		signcolumn = "auto", -- "number"
 		conceallevel = 0,
 		concealcursor = "niv",
 	}

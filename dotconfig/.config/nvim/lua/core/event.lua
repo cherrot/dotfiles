@@ -64,7 +64,7 @@ function autocmd.load_autocmds()
 			{ "FileType", "markdown", "set wrap" },
 			{ "FileType", "make", "set noexpandtab shiftwidth=8 softtabstop=0" },
 			-- Google tab style
-			{ "FileType", "c,cpp", "set expandtab tabstop=2 shiftwidth=2" },
+			-- { "FileType", "c,cpp", "set expandtab tabstop=2 shiftwidth=2" },
 			{ "FileType", "dap-repl", "lua require('dap.ext.autocompl').attach()" },
 			{
 				"FileType",
@@ -76,6 +76,7 @@ function autocmd.load_autocmds()
 				"c,cpp",
 				"nnoremap <leader>h :ClangdSwitchSourceHeaderVSplit<CR>",
 			},
+			{ "FileType", "go", "set noexpandtab" },
 		},
 		yank = {
 			{
@@ -83,6 +84,13 @@ function autocmd.load_autocmds()
 				"*",
 				[[silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=300})]],
 			},
+		},
+		colorscheme = {
+			-- `:hi Comment` to check current color for Comment (default is #616e88)
+			-- 5% brighter #6d7a96, 10% brighter #7b88a1 from https://github.com/arcticicestudio/nord-emacs/issues/43
+			{ "ColorScheme", "nord", "highlight Comment ctermfg=14 guifg=#6d7a96" },
+			-- Folded by default is #4C566A, which is too dark to recognize.
+			{ "ColorScheme", "nord", "highlight Folded cterm=italic,bold guifg=#576279" },
 		},
 	}
 

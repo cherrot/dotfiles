@@ -377,4 +377,8 @@ function config.imselect()
 	end
 end
 
+function config.git_messenger()
+	vim.g.git_messenger_always_into_popup = true
+end
+
 return config

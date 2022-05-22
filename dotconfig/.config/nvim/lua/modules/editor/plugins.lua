@@ -113,7 +113,15 @@ editor["rcarriga/nvim-dap-ui"] = {
 		},
 	},
 }
+-- Git integration
 editor["tpope/vim-fugitive"] = { opt = true, cmd = { "Git", "G" } }
+editor["rhysd/git-messenger.vim"] = {
+	opt = true,
+	cmd = "GitMessenger",
+	keys = "<Leader>gm",
+	config = conf.git_messenger,
+}
+
 editor["famiu/bufdelete.nvim"] = {
 	opt = true,
 	cmd = { "Bdelete", "Bwipeout", "Bdelete!", "Bwipeout!" },

@@ -52,5 +52,9 @@ tools["nathom/filetype.nvim"] = {
 	opt = false,
 	config = conf.filetype,
 }
+tools["qpkorr/vim-renamer"] = {
+	opt = true,
+	cmd = "Renamer",
+}
 
 return tools

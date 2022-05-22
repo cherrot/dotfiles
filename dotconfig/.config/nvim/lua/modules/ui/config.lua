@@ -4,7 +4,16 @@ function config.alpha()
 	local alpha = require("alpha")
 	local dashboard = require("alpha.themes.dashboard")
 
-	dashboard.section.header.val = {}
+	dashboard.section.header.val = {
+		[[                                                     ]],
+		[[  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ]],
+		[[  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ]],
+		[[  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ]],
+		[[  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ]],
+		[[  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ]],
+		[[  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ]],
+		[[                                                     ]],
+	}
 
 	local function button(sc, txt, leader_txt, keybind, keybind_opts)
 		local sc_after = sc:gsub("%s", ""):gsub(leader_txt, "<leader>")
