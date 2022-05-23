@@ -104,13 +104,41 @@ function config.edge()
 end
 
 function config.nord()
-	vim.g.nord_contrast = true
-	vim.g.nord_borders = false
-	vim.g.nord_cursorline_transparent = true
+	vim.g.nord_contrast = true -- has no effect when background is disabled
+	vim.g.nord_borders = true
+	vim.g.nord_cursorline_transparent = false
 	vim.g.nord_disable_background = true
 	vim.g.nord_enable_sidebar_background = false
 	vim.g.nord_italic = true
 	require("nord").set()
+end
+
+function config.onenord()
+	require("onenord").setup({
+		theme = nil, -- "dark" or "light". Alternatively, remove the option and set vim.o.background instead
+		borders = true, -- Split window borders
+		fade_nc = true, -- Fade non-current windows, making them more distinguishable
+		-- Style that is applied to various groups: see `highlight-args` for options
+		styles = {
+			comments = "italic",
+			strings = "NONE",
+			keywords = "NONE",
+			functions = "NONE",
+			variables = "NONE",
+			diagnostics = "underline",
+		},
+		disable = {
+			background = true, -- Disable setting the background color
+			cursorline = false, -- Disable the cursorline
+			eob_lines = true, -- Hide the end-of-buffer lines
+		},
+		-- Inverse highlight for different groups
+		inverse = {
+			match_paren = false,
+		},
+		custom_highlights = {}, -- Overwrite default highlight groups
+		custom_colors = {}, -- Overwrite default colors
+	})
 end
 
 function config.catppuccin()
@@ -272,7 +300,6 @@ function config.lualine()
 	require("lualine").setup({
 		options = {
 			icons_enabled = true,
-			-- theme = "catppuccin",
 			theme = "nord",
 			disabled_filetypes = {},
 			component_separators = "|",

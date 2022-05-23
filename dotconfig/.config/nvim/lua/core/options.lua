@@ -60,7 +60,7 @@ local function load_options()
 		sidescrolloff = 5,
 		foldlevelstart = 99,
 		ruler = true,
-		cursorline = true,
+		-- cursorline = true,
 		cursorcolumn = true,
 		list = true,
 		showtabline = 2,

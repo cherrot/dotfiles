@@ -38,16 +38,16 @@ function autocmd.load_autocmds()
 		},
 		wins = {
 			-- Highlight current line only on focused window
-			{
-				"WinEnter,BufEnter,InsertLeave",
-				"*",
-				[[if ! &cursorline && &filetype !~# '^\(dashboard\|clap_\)' && ! &pvw | setlocal cursorline | endif]],
-			},
-			{
-				"WinLeave,BufLeave,InsertEnter",
-				"*",
-				[[if &cursorline && &filetype !~# '^\(dashboard\|clap_\)' && ! &pvw | setlocal nocursorline | endif]],
-			},
+			-- {
+			-- 	"WinEnter,BufEnter,InsertLeave",
+			-- 	"*",
+			-- 	[[if ! &cursorline && &filetype !~# '^\(dashboard\|clap_\)' && ! &pvw | setlocal cursorline | endif]],
+			-- },
+			-- {
+			-- 	"WinLeave,BufLeave,InsertEnter",
+			-- 	"*",
+			-- 	[[if &cursorline && &filetype !~# '^\(dashboard\|clap_\)' && ! &pvw | setlocal nocursorline | endif]],
+			-- },
 			-- Force write shada on leaving nvim
 			{
 				"VimLeave",
@@ -90,7 +90,7 @@ function autocmd.load_autocmds()
 			-- 5% brighter #6d7a96, 10% brighter #7b88a1 from https://github.com/arcticicestudio/nord-emacs/issues/43
 			{ "ColorScheme", "nord", "highlight Comment ctermfg=14 guifg=#6d7a96" },
 			-- Folded by default is #4C566A, which is too dark to recognize.
-			{ "ColorScheme", "nord", "highlight Folded cterm=italic,bold guifg=#576279" },
+			{ "ColorScheme", "nord", "highlight Folded gui=italic,bold guifg=#576279" },
 		},
 	}
 

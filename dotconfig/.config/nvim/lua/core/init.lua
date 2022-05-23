@@ -97,7 +97,7 @@ local load_core = function()
 	leader_map()
 
 	pack.ensure_plugins()
-	neovide_config()
+	-- neovide_config()
 	check_conda()
 	-- clipboard_config()
 
@@ -107,7 +107,6 @@ local load_core = function()
 	require("core.event")
 	pack.load_compile()
 
-	-- vim.cmd([[colorscheme catppuccin]])
 	vim.cmd([[colorscheme nord]])
 end
 
