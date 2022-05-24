@@ -32,8 +32,8 @@ local function load_options()
 		ttimeout = true,
 		timeoutlen = 500,
 		ttimeoutlen = 0,
-		updatetime = 100,
-		redrawtime = 1500,
+		-- updatetime = 5000,
+		-- redrawtime = 2000,
 		ignorecase = true,
 		smartcase = true,
 		infercase = true,
@@ -83,7 +83,8 @@ local function load_options()
 		autowrite = true,
 
 		undofile = true,
-		synmaxcol = 2500,
+		-- Maximum column in which to search for syntax items.
+		synmaxcol = 512,
 		formatoptions = "1jcroql",
 
 		smartindent = true,
