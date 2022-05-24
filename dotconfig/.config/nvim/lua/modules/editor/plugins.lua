@@ -39,6 +39,10 @@ editor["nvim-treesitter/nvim-treesitter-textobjects"] = {
 	opt = true,
 	after = "nvim-treesitter",
 }
+editor["nvim-treesitter/playground"] = {
+	opt = true,
+	cmd = { "TSPlaygroundToggle", "TSHighlightCapturesUnderCursor" },
+}
 editor["p00f/nvim-ts-rainbow"] = {
 	opt = true,
 	after = "nvim-treesitter",
