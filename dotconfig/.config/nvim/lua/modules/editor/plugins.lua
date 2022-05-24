@@ -67,7 +67,7 @@ editor["andymass/vim-matchup"] = {
 	config = conf.matchup,
 }
 editor["rhysd/accelerated-jk"] = { opt = true, event = "BufWinEnter" }
-editor["hrsh7th/vim-eft"] = { opt = true, event = "BufReadPost" }
+editor["hrsh7th/vim-eft"] = { opt = true, event = "BufRead" }
 editor["romainl/vim-cool"] = {
 	opt = true,
 	event = { "CursorMoved", "InsertEnter" },
@@ -75,14 +75,14 @@ editor["romainl/vim-cool"] = {
 editor["phaazon/hop.nvim"] = {
 	opt = true,
 	branch = "v1",
-	event = "BufReadPost",
+	event = "BufRead",
 	config = function()
 		require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
 	end,
 }
 editor["karb94/neoscroll.nvim"] = {
 	opt = true,
-	event = "BufReadPost",
+	event = "BufRead",
 	config = conf.neoscroll,
 }
 editor["vimlab/split-term.vim"] = { opt = true, cmd = { "Term", "VTerm" } }
@@ -147,9 +147,14 @@ editor["sindrets/diffview.nvim"] = {
 	cmd = { "DiffviewOpen" },
 }
 editor["brglng/vim-im-select"] = {
-	opt = false,
-	event = "BufReadPost",
+	opt = true,
+	event = "BufRead",
 	config = conf.imselect,
+}
+editor["chentoast/marks.nvim"] = {
+	opt = true,
+	event = "BufRead",
+	config = conf.marks,
 }
 
 return editor
