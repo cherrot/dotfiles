@@ -30,7 +30,7 @@ local plug_map = {
 	["n|<leader>pu"] = map_cr("PackerUpdate"):with_silent():with_noremap():with_nowait(),
 	["n|<leader>pi"] = map_cr("PackerInstall"):with_silent():with_noremap():with_nowait(),
 	["n|<leader>pc"] = map_cr("PackerClean"):with_silent():with_noremap():with_nowait(),
-	-- Lsp mapp work when insertenter and lsp start
+	-- Lsp map work when insert enter and lsp start
 	["n|<leader>li"] = map_cr("LspInfo"):with_noremap():with_silent():with_nowait(),
 	["n|<leader>lr"] = map_cr("LspRestart"):with_noremap():with_silent():with_nowait(),
 	["n|g]"] = map_cr("Lspsaga diagnostic_jump_next"):with_noremap():with_silent(),
@@ -42,6 +42,7 @@ local plug_map = {
 	["n|<C-Down>"] = map_cr("lua require('lspsaga.action').smart_scroll_with_saga(1)"):with_noremap():with_silent(),
 	["n|<leader>ca"] = map_cr("Lspsaga code_action"):with_noremap():with_silent(),
 	["v|<leader>ca"] = map_cu("Lspsaga range_code_action"):with_noremap():with_silent(),
+	["v|<leader>f"] = map_cmd("<cmd>lua vim.lsp.buf.range_formatting()<CR>"):with_noremap():with_silent(),
 	["n|gd"] = map_cr("Lspsaga preview_definition"):with_noremap():with_silent(),
 	["n|gD"] = map_cr("lua vim.lsp.buf.definition()"):with_noremap():with_silent(),
 	["n|gh"] = map_cr("lua vim.lsp.buf.references()"):with_noremap():with_silent(),
