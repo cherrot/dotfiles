@@ -25,8 +25,10 @@ export GOPRIVATE=git-pd.megvii-inc.com,go.megvii-inc.com,bistro.sh # gitlab域�
 #Aliases:
 #
 alias lsport='lsof -Pnl +M -i4'
-#alias lsport6='lsof -Pnl +M -i6'
+# alias lsport6='lsof -Pnl +M -i6'
 alias vim=nvim
+# make terminfo (TERM=xterm-kitty) consitant across ssh sessions.
+alias s="kitty +kitten ssh"
 
 alias pacupg='sudo pacman -Syu'  # 同步软件仓库信息然后升级系统
 alias aurupg='yaourt -Syu --aur' # 同步软件仓库信息然后升级系统
