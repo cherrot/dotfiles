@@ -217,7 +217,7 @@ bindsym $mod+Mod4+n exec --no-startup-id variety -n
 bindsym $mod+Mod4+p exec --no-startup-id variety -p
 bindsym $mod+Tab workspace back_and_forth
 workspace_auto_back_and_forth yes
-bindsym $mod+n exec --no-startup-id google-chrome-stable
+bindsym $mod+n exec --no-startup-id google-chrome-stable --disk-cache-dir="$XDG_RUNTIME_DIR/chrome-cache"
 bindsym $mod+m exec --no-startup-id nautilus
 bindsym $mod+Shift+s exec --no-startup-id flameshot gui
 # https://wiki.archlinux.org/title/Session_lock

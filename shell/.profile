@@ -28,7 +28,7 @@ alias lsport='lsof -Pnl +M -i4'
 # alias lsport6='lsof -Pnl +M -i6'
 alias vim=nvim
 # make terminfo (TERM=xterm-kitty) consitant across ssh sessions.
-alias s="kitty +kitten ssh"
+alias ssh="TERM=xterm-256color ssh"
 
 alias pacupg='sudo pacman -Syu'  # 同步软件仓库信息然后升级系统
 alias aurupg='yaourt -Syu --aur' # 同步软件仓库信息然后升级系统
