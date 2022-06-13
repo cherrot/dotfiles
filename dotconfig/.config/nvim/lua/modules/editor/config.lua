@@ -414,11 +414,11 @@ function config.marks()
 		},
 		mappings = {
 			toggle = "m;",
-			delete_buffer = "m<space>",
+			delete_buf = "m<space>",
 			next = "m]",
 			prev = "m[",
 			preview = "m<tab>",
-			annotate = "m<c-a>",
+			annotate = "m<C-a>",
 		},
 	})
 end
