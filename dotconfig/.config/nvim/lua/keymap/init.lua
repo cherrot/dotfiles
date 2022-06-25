@@ -8,8 +8,8 @@ local plug_map = {
 	-- Bufferline
 	-- ["n|<A-q>"] = map_cmd(":Bwipeout<CR>"), -- <A-q> to close buffer
 	["n|gb"] = map_cr("BufferLinePick"):with_noremap():with_silent(),
-	["n|gt"] = map_cr("BufferLineCycleNext"):with_noremap():with_silent(),
-	["n|gT"] = map_cr("BufferLineCyclePrev"):with_noremap():with_silent(),
+	-- ["n|gt"] = map_cr("BufferLineCycleNext"):with_noremap():with_silent(),
+	-- ["n|gT"] = map_cr("BufferLineCyclePrev"):with_noremap():with_silent(),
 	["n|]b"] = map_cr("BufferLineCycleNext"):with_noremap():with_silent(),
 	["n|[b"] = map_cr("BufferLineCyclePrev"):with_noremap():with_silent(),
 	["n|}b"] = map_cr("BufferLineMoveNext"):with_noremap():with_silent(),
