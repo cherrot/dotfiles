@@ -286,6 +286,8 @@ exec --no-startup-id fcitx5 -d
 exec --no-startup-id flameshot
 exec --no-startup-id blueman-applet
 exec --no-startup-id variety
+# Notification Daemon
+exec swaync
 
 ############################
 # custom binding
@@ -295,8 +297,10 @@ bindsym $mod+$alt+n exec --no-startup-id variety -n
 bindsym $mod+$alt+p exec --no-startup-id variety -p
 bindsym $mod+n exec --no-startup-id google-chrome-stable --disk-cache-dir="$XDG_RUNTIME_DIR/chrome-cache"
 bindsym $mod+m exec --no-startup-id nautilus
-bindsym $mod+Shift+m exec --no-startup-id ranger
+#bindsym $mod+Shift+m exec --no-startup-id ranger
 bindsym $mod+Shift+s exec --no-startup-id flameshot gui
+# Toggle control center
+bindsym $mod+Shift+n exec swaync-client -t -sw
 
 ############################
 # custom window setting
