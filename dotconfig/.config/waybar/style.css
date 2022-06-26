@@ -1,9 +1,12 @@
+@define-color bgcolor rgba (27,31,38,0.4);
+@define-color selectcolor rgb (63,74,96);
+
 * {
     border: none;
-    font-family: FiraCode Nerd Font, Noto Color Emoji, Material Design Icons, monospace;
+    font-family: FiraCode Nerd Font, Material Design Icons, monospace;
     font-size: 11px;
     color: #ffffff;
-    border-radius: 20px;
+    border-radius: 8px;
 }
 
 window {
@@ -14,16 +17,16 @@ window#waybar {
 }
 /*-----module groups----*/
 .modules-right {
-	background-color: rgba(0,43,51,0.85);
-    margin: 2px 10px 0 0;
+	background-color: @bgcolor;
+    margin: 2px 5px 0 0;
 }
 .modules-center {
-	background-color: rgba(0,43,51,0.85);
+	background-color: @bgcolor;
     margin: 2px 0 0 0;
 }
 .modules-left {
     margin: 2px 0 0 5px;
-	background-color: rgba(0,119,179,0.6);
+	background-color: @bgcolor;
 }
 /*-----modules indv----*/
 #workspaces button {
@@ -36,7 +39,7 @@ window#waybar {
 }
 
 #workspaces button.focused {
-	background-color: rgba(0,43,51,0.85);
+	background-color: @bgcolor;
 }
 
 #clock,
@@ -62,7 +65,7 @@ window#waybar {
     background-color: rgba(0,119,179,0.6);
     border-radius: 50px;
     margin: 5px 5px;
-    padding: 1px 3px;
+    padding: 1px 0 1px 4px;
 }
 /*-----Indicators----*/
 #idle_inhibitor.activated {

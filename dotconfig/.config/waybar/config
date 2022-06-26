@@ -1,17 +1,15 @@
 {
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["clock", "idle_inhibitor"],
-    "modules-right": ["tray", "custom/scratchpad-indicator", "pulseaudio", "temperature", "battery", "custom/power", "custom/menu"],
+    "modules-left": ["clock",  "sway/window"],
+    "modules-center": ["sway/workspaces", "idle_inhibitor", "sway/mode", "tray"],
+    "modules-right": ["custom/scratchpad-indicator", "network", "bluetooth", "temperature", "cpu", "memory", "disk", "backlight", "pulseaudio", "custom/notify", "battery", "custom/power"],
 
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+    "clock": {
+        "format": "{:%a %Y-%m-%d %H:%M}",
+        "format-alt": "{:%a %H:%M}"
     },
-    "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname} ",
-        "format-disconnected": "", 
-        "max-length": 50,
-        "on-click": "kitty -e 'nmtui'"
+    "sway/window": {
+        "format": "\t{} ",
+        "max-length": 50
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -20,51 +18,68 @@
             "deactivated": ""
         }
     },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+
     "tray": {
         "icon-size": 15,
-        "spacing": 10
+        "spacing": 5
     },
-    "clock": {
-        // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        // "format-alt": "{:%Y-%m-%d}"
-		"on-click": "gnome-calendar"
+    "network": {
+        "interval": 2,
+        "format-wifi": " {signalStrength}%  {bandwidthDownBytes:3}  {bandwidthUpBytes:3}",
+        "tooltip-format-wifi": " {essid} {frequency}GHz {signaldBm}dBm {ipaddr}",
+        "format-ethernet": "{ifname} ",
+        "format-disconnected": "", 
+        "max-length": 50
     },
-    // "cpu": {
-    //     "format": "{usage}% ",
-    //     "tooltip": false
-    // },
-    // "memory": {
-    //     "format": "{}% "
-    // },
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    },
     "temperature": {
-        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
-        "critical-threshold": 82,
-        "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+        "critical-threshold": 65,
+        "format-critical": "{icon} {temperatureC}°C",
+        "format": "{icon} {temperatureC}°C",
         "format-icons": [""]
     },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 20,
-            "critical": 10
-        },
-        "interval": 5,
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        /* "format-plugged": "{capacity}% ", */
-        "format-alt": "{time} {icon}",
-        "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+    "cpu": {
+        "interval": 2,
+        // "format": " {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}",
+        "format": " {usage}%",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {percentage}%",
+        "max-length": 10
+    },
+    "disk": {
+        "interval": 600,
+        "format": " {free}",
+        "path": "/"
+    },
+    "backlight": {
+        "interval": 30,
+        "format": " {icon} {percent}%",
+        "format-icons": ["", ""]
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} ",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "0% {icon} ",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format": "{icon} {volume}",
+        "format-bluetooth": "{icon} {volume} {format_source}",
+        "format-bluetooth-muted": "{icon}  {format_source}",
+        "format-muted": "{icon} Muted",
+        "format-source": " {volume}",
+        "format-source-muted": " ",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -76,26 +91,36 @@
         },
         "on-click": "pavucontrol"
     },
+	"custom/notify": {
+		"format": " {}",
+        "exec": "swaync-client -c",
+        "interval": 10,
+	 	"on-click": "swaync-client -t -sw",
+	},
+    "battery": {
+        "states": {
+            "good": 70,
+            "warning": 20,
+            "critical": 10
+        },
+        "interval": 60,
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        /* "format-plugged": " {capacity}%", */
+        "format-alt": "{icon} {time}",
+        "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
 	"custom/power": {
-		"format": "",
+		"format": " ",
 		"on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Restart' 'shutdown -r now' -b 'Shutdown'  'shutdown -h now' --background=#005566 --button-background=#009999 --button-border=#002b33 --border-bottom=#002b33"
 	},
-	// "custom/example_runscript_3 seconds": {
-	// 	"interval": 3,
-	// 	"exec": "/home/dg/.config/waybar/modules/menu_test.py",
-	// 	"format": "{}",
-	// },
-	// "custom/menu": {
-	// 	"format": "",
-	//  	"on-click": "/home/dg/.config/waybar/modules/menu_test.py",
-	// },
     "custom/scratchpad-indicator": {
-        "format-text": "{}",
-        "return-type": "json",
         "interval": 3,
-        "exec": "~/.local/bin/scratchpad-indicator 2> /dev/null",
-        "exec-if": "exit 0",
-        "on-click": "swaymsg 'scratchpad show'",
-        "on-click-right": "swaymsg 'move scratchpad'"
+        "return-type": "json",
+        "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '(recurse(.nodes[]) | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | if ($scratch_nodes|length) > 0 then { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") } else empty end'",
+        "format": "🗗 {}",
+        "on-click": "exec swaymsg 'scratchpad show'",
+        "on-click-right": "exec swaymsg 'move scratchpad'"
     }
 }
