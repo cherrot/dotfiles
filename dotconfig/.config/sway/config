@@ -69,8 +69,8 @@ client.focused          #FFFFFF #FFFFFF #FFFFFF #FFFFFF #FFFFFF
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         timeout 600 'swaylock -f -c 000000' \
+         timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -80,18 +80,16 @@ exec swayidle -w \
 ############################
 # Input configuration
 ############################
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
+input type:keyboard {
+    repeat_delay 300
+    repeat_rate 30
+}
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+}
 
 ############################
 # Key bindings
@@ -242,14 +240,18 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 #
-# Audio:
+# Special keys:
 #
-    # Use pactl to adjust volume in PulseAudio.
-    # set $refresh_i3status killall -SIGUSR1 i3status
-    # bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-    # bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-    # bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-    # bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+    bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+    bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+    bindsym XF86AudioPlay exec playerctl play-pause
+    bindsym XF86AudioNext exec playerctl next
+    bindsym XF86AudioPrev exec playerctl previous
+    bindsym XF86Search exec bemenu-run
 
 ############################
 # Status Bar:
@@ -286,11 +288,12 @@ exec wlsunset
 bindsym $mod+$alt+n exec --no-startup-id variety -n
 bindsym $mod+$alt+p exec --no-startup-id variety -p
 bindsym $mod+n exec --no-startup-id google-chrome-stable --disk-cache-dir="$XDG_RUNTIME_DIR/chrome-cache"
-bindsym $mod+m exec --no-startup-id nautilus
+#bindsym $mod+m exec --no-startup-id nautilus
 #bindsym $mod+Shift+m exec --no-startup-id ranger
 bindsym $mod+Shift+s exec --no-startup-id flameshot gui
 # Toggle control center
 bindsym $mod+Shift+n exec swaync-client -t -sw
+bindsym $mod+Shift+p exec '$HOME/bin/sway-toggle-display'
 
 ############################
 # custom window setting

@@ -6,6 +6,7 @@ set -o pipefail
 # Darwin or Linux
 OS=$(uname)
 
+stow bin
 stow shell
 stow dotconfig
 
