@@ -51,3 +51,4 @@ alias pacmir='sudo pacman -Syy'  # 强制刷新软件仓库信息
 export EDITOR=vim
 export TERMINAL=kitty
 export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
