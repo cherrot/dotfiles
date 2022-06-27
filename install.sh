@@ -8,12 +8,17 @@ OS=$(uname)
 
 stow bin
 stow shell
+stow tig
 stow dotconfig
 
-if [[ "${OS}" == "Linux" ]]; then
-    stow Xorg
-    stow -t /etc _etc
-elif [[ "${OS}" == "Darwin" ]]; then
-    # stow dotconfig
+if [[ "${OS}" == "Darwin" ]]; then
     stow git
+elif [[ "${OS}" == "Linux" ]]; then
+    if [[ $XDG_SESSION_TYPE == "X11" ]]; then
+        stow home4X
+        sudo stow -t /etc etc4X
+    else
+        stow home4sway
+        sudo stow -t /etc etc4sway
+    fi
 fi
