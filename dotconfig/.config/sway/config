@@ -279,7 +279,8 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id variety
 # Notification Daemon
 exec swaync
-exec wlsunset
+exec wlsunset -S 06:00 -s 12:00 -T 6500 -t 5000 -d 1800
+exec nextcloud
 
 ############################
 # custom binding
