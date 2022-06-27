@@ -6,7 +6,7 @@
     border: none;
     font-family: FiraCode Nerd Font, Material Design Icons, monospace;
     font-size: 11px;
-    color: #ffffff;
+    color: rgba(255,255,255,0.75);
     border-radius: 8px;
 }
 

@@ -33,10 +33,12 @@
         "format-ethernet": "{ifname} ",
         "format-disconnected": "", 
         "on-click": "nm-connection-editor",
-        "max-length": 50
+        "min-length": 24,
+        "max-length": 24
     },
     "bluetooth": {
-        "max-length": 20,
+        "min-length": 16,
+        "max-length": 16,
         "format": " {status}",
         "format-connected": " {device_alias}",
         "format-connected-battery": " {device_alias} {device_battery_percentage}%",
