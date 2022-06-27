@@ -1,15 +1,15 @@
 {
-    "modules-left": ["clock",  "sway/window"],
-    "modules-center": ["sway/workspaces", "idle_inhibitor", "sway/mode", "tray"],
-    "modules-right": ["custom/scratchpad-indicator", "network", "bluetooth", "temperature", "cpu", "memory", "disk", "backlight", "pulseaudio", "custom/notify", "battery", "custom/power"],
+    "modules-left": ["clock", "network", "bluetooth", "sway/window"],
+    "modules-center": ["sway/workspaces", "idle_inhibitor", "sway/mode"],
+    "modules-right": ["custom/scratchpad-indicator", "tray", "temperature", "cpu", "memory", "disk", "backlight", "pulseaudio", "custom/notify", "battery", "custom/power"],
 
     "clock": {
-        "format": "{:%a %Y-%m-%d %H:%M}",
+        "format": "{:%a %m-%d %H:%M}",
         "format-alt": "{:%a %H:%M}"
     },
     "sway/window": {
-        "format": "\t{} ",
-        "max-length": 50
+        "format": "     {} ",
+        "max-length": 34
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -32,9 +32,11 @@
         "tooltip-format-wifi": " {essid} {frequency}GHz {signaldBm}dBm {ipaddr}",
         "format-ethernet": "{ifname} ",
         "format-disconnected": "", 
+        "on-click": "nm-connection-editor",
         "max-length": 50
     },
     "bluetooth": {
+        "max-length": 20,
         "format": " {status}",
         "format-connected": " {device_alias}",
         "format-connected-battery": " {device_alias} {device_battery_percentage}%",
@@ -53,8 +55,8 @@
     },
     "cpu": {
         "interval": 2,
-        // "format": " {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}",
-        "format": " {usage}%",
+        "format": " {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}",
+        //"format": " {usage}%",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     },
     "memory": {
@@ -113,7 +115,8 @@
     },
 	"custom/power": {
 		"format": " ",
-		"on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Restart' 'shutdown -r now' -b 'Shutdown'  'shutdown -h now' --background=#005566 --button-background=#009999 --button-border=#002b33 --border-bottom=#002b33"
+        // Add user to wheel group and add /etc/sudoers.d/wheel, set nopasswd
+		"on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Suspend' 'systemctl suspend' -b 'Restart' 'shutdown -r now' -b 'Shutdown'  'shutdown -h now' --background=#005566 --button-background=#009999 --button-border=#002b33 --border-bottom=#002b33"
 	},
     "custom/scratchpad-indicator": {
         "interval": 3,

@@ -1,5 +1,6 @@
-@define-color bgcolor rgba (27,31,38,0.4);
-@define-color selectcolor rgb (63,74,96);
+@define-color bgcolor rgba(27,31,38,0.6);
+@define-color selectcolor rgba(63,74,96,0.85);
+@define-color urgentcolor rgba(0,153,153,0.8);
 
 * {
     border: none;
@@ -33,13 +34,19 @@ window#waybar {
     padding: 1px 5px;
     background-color: transparent;
 }
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
     box-shadow: inherit;
-	background-color: rgba(0,153,153,1);
+    /* text-shadow: inherit; */
+	background: @urgentcolor;
+}
+
+#workspaces button.urgent {
+	background-color: @urgentcolor;
 }
 
 #workspaces button.focused {
-	background-color: @bgcolor;
+	background-color: @selectcolor;
 }
 
 #clock,
@@ -65,7 +72,10 @@ window#waybar {
     background-color: rgba(0,119,179,0.6);
     border-radius: 50px;
     margin: 5px 5px;
-    padding: 1px 0 1px 4px;
+    padding: 1px 0 1px 5px;
+}
+#tray menu {
+    background-color: @selectcolor;
 }
 /*-----Indicators----*/
 #idle_inhibitor.activated {
