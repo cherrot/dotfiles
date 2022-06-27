@@ -288,7 +288,8 @@ exec wlsunset
 bindsym $mod+$alt+n exec --no-startup-id variety -n
 bindsym $mod+$alt+p exec --no-startup-id variety -p
 # install profile-sync-daemon to cache profile dir. Also set a tmpfs cache dir.
-# # https://blogs.igalia.com/adunaev/2020/11/13/hidpi-support-in-chromium-for-wayland/
+# https://wiki.archlinux.org/title/Chromium#Native_Wayland_support
+# https://wiki.archlinux.org/title/Wayland#Configuration_file
 bindsym $mod+n exec --no-startup-id google-chrome-stable --disk-cache-dir="$XDG_RUNTIME_DIR/chrome-cache" --ozone-platform-hint=auto
 bindsym $mod+m exec --no-startup-id ranger
 #bindsym $mod+Shift+m exec --no-startup-id ranger
