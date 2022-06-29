@@ -95,6 +95,7 @@ input type:keyboard {
 input 1:1:AT_Translated_Set_2_keyboard {
     xkb_options altwin:swap_lalt_lwin,ctrl:nocaps
 }
+
 input type:touchpad {
     tap enabled
     natural_scroll enabled
@@ -300,7 +301,8 @@ bindsym $mod+$alt+p exec --no-startup-id variety -p
 # install profile-sync-daemon to cache profile dir. Also set a tmpfs cache dir.
 # https://wiki.archlinux.org/title/Chromium#Native_Wayland_support
 # https://wiki.archlinux.org/title/Wayland#Configuration_file
-bindsym $mod+n exec --no-startup-id google-chrome-stable --disk-cache-dir="$XDG_RUNTIME_DIR/chrome-cache" --ozone-platform-hint=auto
+# btw --gtk-version=4 has no effect on sway/sway-im-git
+bindsym $mod+n exec --no-startup-id google-chrome-stable --disk-cache-dir="$XDG_RUNTIME_DIR/chrome-cache" #--ozone-platform-hint=auto
 bindsym $mod+m exec --no-startup-id ranger
 #bindsym $mod+Shift+m exec --no-startup-id ranger
 bindsym $mod+Shift+s exec --no-startup-id flameshot gui
