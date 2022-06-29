@@ -16,3 +16,6 @@ SDL_VIDEODRIVER=wayland
 QT_QPA_PLATFORM=wayland
 XDG_CURRENT_DESKTOP=sway
 XDG_SESSION_DESKTOP=sway
+
+# from ArchWiki of dolphin: fix no icon issue
+QT_QPA_PLATFORMTHEME=qt5ct

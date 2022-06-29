@@ -290,7 +290,7 @@ exec --no-startup-id variety
 # Notification Daemon
 exec swaync
 exec wlsunset -S 06:00 -s 12:00 -T 6500 -t 5000 -d 1800
-exec nextcloud
+exec nextcloud --background
 
 ############################
 # custom binding
@@ -303,12 +303,14 @@ bindsym $mod+$alt+p exec --no-startup-id variety -p
 # https://wiki.archlinux.org/title/Wayland#Configuration_file
 # btw --gtk-version=4 has no effect on sway/sway-im-git
 bindsym $mod+n exec --no-startup-id google-chrome-stable --disk-cache-dir="$XDG_RUNTIME_DIR/chrome-cache" #--ozone-platform-hint=auto
-bindsym $mod+m exec --no-startup-id ranger
+bindsym $mod+m exec --no-startup-id dolphin
+bindsym $mod+Shift+m exec --no-startup-id ranger
 #bindsym $mod+Shift+m exec --no-startup-id ranger
 bindsym $mod+Shift+s exec --no-startup-id flameshot gui
 # Toggle control center
 bindsym $mod+Shift+n exec swaync-client -t -sw
-bindsym $mod+Shift+p exec '$HOME/bin/sway-toggle-display'
+# enter idle state immediately
+bindsym $mod+Shift+p exec killall -SIGUSR1 swayidle
 
 ############################
 # custom window setting
