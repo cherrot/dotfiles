@@ -13,5 +13,5 @@ export GDK_SCALE=2
 export GDK_DPI_SCALE=0.5
 
 # https://wiki.archlinux.org/index.php/GNOME/Keyring#Using_the_keyring_outside_GNOME
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agen
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 eval export $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)
