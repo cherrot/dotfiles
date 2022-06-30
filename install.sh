@@ -6,7 +6,7 @@ set -o pipefail
 # Darwin or Linux
 OS=$(uname)
 
-stow bin
+#stow bin
 stow shell
 stow tig
 stow dotconfig
