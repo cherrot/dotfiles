@@ -11,7 +11,7 @@ INPUT_METHOD=fcitx
 SDL_IM_MODULE=fcitx
 GLFW_IM_MODULE=ibus
 
-# from flameshot wiki:
+# from flameshot doc https://github.com/flameshot-org/flameshot/blob/master/docs/Sway%20and%20wlroots%20support.md
 SDL_VIDEODRIVER=wayland
 QT_QPA_PLATFORM=wayland
 XDG_CURRENT_DESKTOP=sway

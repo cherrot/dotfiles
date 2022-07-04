@@ -1,14 +1,14 @@
 {
-    "modules-left": ["clock", "network", "bluetooth", "sway/window"],
+    "modules-left": ["clock", "temperature", "cpu", "memory", "disk", "sway/window"],
     "modules-center": ["sway/workspaces", "idle_inhibitor", "sway/mode"],
-    "modules-right": ["custom/scratchpad-indicator", "tray", "temperature", "cpu", "memory", "disk", "backlight", "pulseaudio", "custom/notify", "battery", "custom/power"],
+    "modules-right": ["custom/scratchpad-indicator", "tray", "bluetooth", "network", "backlight", "pulseaudio", "custom/notify", "battery", "custom/power"],
 
     "clock": {
         "format": "{:%a %m-%d %H:%M}",
         "format-alt": "{:%a %H:%M}"
     },
     "sway/window": {
-        "format": "     {} ",
+        "format": "   {} ",
         "max-length": 34
     },
     "idle_inhibitor": {
@@ -30,21 +30,21 @@
         "interval": 2,
         "format-wifi": " {signalStrength}%  {bandwidthDownBytes:3}  {bandwidthUpBytes:3}",
         "tooltip-format-wifi": " {essid} {frequency}GHz {signaldBm}dBm {ipaddr}",
-        "format-ethernet": "{ifname} ",
-        "format-disconnected": "", 
+        "format-ethernet": " {ifname}",
+        "format-disconnected": " ", 
         "on-click": "nm-connection-editor",
-        "min-length": 24,
-        "max-length": 24
+        "min-length": 27,
+        "max-length": 27
     },
     "bluetooth": {
-        "min-length": 16,
-        "max-length": 16,
+        // "min-length": 18,
+        "max-length": 18,
         "format": " {status}",
-        "format-connected": " {device_alias}",
-        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "format-connected": " {num_connections}",
+        "format-connected-battery": " {device_battery_percentage}%",
         // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
-        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
     },
@@ -58,13 +58,11 @@
     "cpu": {
         "interval": 2,
         "format": " {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}",
-        //"format": " {usage}%",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     },
     "memory": {
         "interval": 30,
         "format": " {percentage}%",
-        "max-length": 10
     },
     "disk": {
         "interval": 600,
@@ -73,7 +71,7 @@
     },
     "backlight": {
         "interval": 30,
-        "format": " {icon} {percent}%",
+        "format": "{icon} {percent}%",
         "format-icons": ["", ""]
     },
     "pulseaudio": {
@@ -110,7 +108,7 @@
         "interval": 60,
         "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
-        /* "format-plugged": " {capacity}%", */
+        "format-plugged": " {capacity}%",
         "format-alt": "{icon} {time}",
         "format-full": "",
         "format-icons": ["", "", "", "", ""]
