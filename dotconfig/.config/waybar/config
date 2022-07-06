@@ -1,7 +1,8 @@
+// vi: filetype=json
 {
-    "modules-left": ["clock", "temperature", "cpu", "memory", "disk", "sway/window"],
+    "modules-left": ["clock", "network", "bluetooth", "sway/window"],
     "modules-center": ["sway/workspaces", "idle_inhibitor", "sway/mode"],
-    "modules-right": ["custom/scratchpad-indicator", "tray", "bluetooth", "network", "backlight", "pulseaudio", "custom/notify", "battery", "custom/power"],
+    "modules-right": ["custom/scratchpad-indicator", "tray", "temperature", "cpu", "memory", "disk", "backlight", "pulseaudio", "custom/notify", "battery", "custom/power"],
 
     "clock": {
         "format": "{:%a %m-%d %H:%M}",
@@ -30,7 +31,8 @@
         "interval": 2,
         "format-wifi": " {signalStrength}%  {bandwidthDownBytes:3}  {bandwidthUpBytes:3}",
         "tooltip-format-wifi": " {essid} {frequency}GHz {signaldBm}dBm {ipaddr}",
-        "format-ethernet": " {ifname}",
+        "format-ethernet": "  {bandwidthDownBytes:3}  {bandwidthUpBytes:3}",
+        "tooltip-format-ethernet": " {ifname} {ipaddr}",
         "format-disconnected": " ", 
         "on-click": "nm-connection-editor",
         "min-length": 27,
@@ -41,7 +43,7 @@
         "max-length": 18,
         "format": " {status}",
         "format-connected": " {num_connections}",
-        "format-connected-battery": " {device_battery_percentage}%",
+        "format-connected-battery": " {num_connections} {device_battery_percentage}%",
         // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
         "tooltip-format": "{controller_alias}\t{controller_address}\n{num_connections} connected",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n{num_connections} connected\n\n{device_enumerate}",
@@ -51,9 +53,9 @@
     "temperature": {
         "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
         "critical-threshold": 65,
-        "format-critical": "{icon} {temperatureC}°C",
-        "format": "{icon} {temperatureC}°C",
-        "format-icons": [""]
+        "format-critical": "{icon}{temperatureC}°C",
+        "format": "{icon}{temperatureC}°C",
+        "format-icons": [""],
     },
     "cpu": {
         "interval": 2,
@@ -71,8 +73,8 @@
     },
     "backlight": {
         "interval": 30,
-        "format": "{icon} {percent}%",
-        "format-icons": ["", ""]
+        "format": " {icon}{percent}%",
+        "format-icons": [" ", " "]
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -101,17 +103,17 @@
 	},
     "battery": {
         "states": {
-            "good": 70,
-            "warning": 20,
-            "critical": 10
+            "good": 55,
+            "warning": 25,
+            "critical": 15
         },
         "interval": 60,
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
+        "format": "{icon}{capacity}%",
+        "format-charging": "{icon}{capacity}%",
         "format-plugged": " {capacity}%",
-        "format-alt": "{icon} {time}",
+        "format-alt": "{icon}{time}",
         "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [" ", " ", " ", " ", " "]
     },
 	"custom/power": {
 		"format": " ",
