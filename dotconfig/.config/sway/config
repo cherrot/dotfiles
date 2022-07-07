@@ -280,14 +280,14 @@ include /etc/sway/config.d/*
 #exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+exec nm-applet
 
-# exec --no-startup-id autotiling
-exec --no-startup-id fcitx5 -d
-# exec --no-startup-id deadd-notification-center
-exec --no-startup-id flameshot
-exec --no-startup-id blueman-applet
-exec --no-startup-id variety
+# exec autotiling
+exec fcitx5 -d
+# exec deadd-notification-center
+exec flameshot
+exec blueman-applet
+exec variety
 # Notification Daemon
 exec swaync
 exec wlsunset -S 06:00 -s 12:00 -T 6500 -t 4000 -d 1800
@@ -297,17 +297,17 @@ exec nextcloud --background
 # custom binding
 ############################
 # use variety to change wallpapers by interval.
-bindsym $mod+$alt+n exec --no-startup-id variety -n
-bindsym $mod+$alt+p exec --no-startup-id variety -p
+bindsym $mod+$alt+n exec variety -n
+bindsym $mod+$alt+p exec variety -p
 # install profile-sync-daemon to cache profile dir. Also set a tmpfs cache dir.
 # https://wiki.archlinux.org/title/Chromium#Native_Wayland_support
 # https://wiki.archlinux.org/title/Wayland#Configuration_file
 # btw --gtk-version=4 has no effect on sway/sway-im-git
-bindsym $mod+n exec --no-startup-id google-chrome-stable --disk-cache-dir="$XDG_RUNTIME_DIR/chrome-cache" #--ozone-platform-hint=auto
-bindsym $mod+m exec --no-startup-id dolphin
-bindsym $mod+Shift+m exec --no-startup-id ranger
-#bindsym $mod+Shift+m exec --no-startup-id ranger
-bindsym $mod+Shift+s exec --no-startup-id flameshot gui
+bindsym $mod+n exec google-chrome-stable --disk-cache-dir="$XDG_RUNTIME_DIR/chrome-cache" #--ozone-platform-hint=auto
+bindsym $mod+m exec dolphin
+bindsym $mod+Shift+m exec $term ranger
+#bindsym $mod+Shift+m exec ranger
+bindsym $mod+Shift+s exec flameshot gui
 # Toggle control center
 bindsym $mod+Shift+n exec swaync-client -t -sw
 # enter idle state immediately
