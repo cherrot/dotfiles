@@ -33,7 +33,7 @@ font pango:monospace 9
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fit
 #
-output eDP-1 resolution 2880x1800 position 720 2160 render_bit_depth 10
+output eDP-1 resolution 2880x1800 position 3000 2160 render_bit_depth 10
 output DP-1 resolution 3840x2160 position 0 0
 output DP-2 resolution 3840x2160 position 0 0
 output DP-3 resolution 3840x2160 position 0 0
