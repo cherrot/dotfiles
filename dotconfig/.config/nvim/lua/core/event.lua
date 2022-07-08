@@ -75,6 +75,7 @@ function autocmd.load_autocmds()
 				"nnoremap <leader>h :ClangdSwitchSourceHeaderVSplit<CR>",
 			},
 			{ "FileType", "go", "set noexpandtab" },
+			{ "FileType", "star", "set filetype=python" },
 		},
 		yank = {
 			{

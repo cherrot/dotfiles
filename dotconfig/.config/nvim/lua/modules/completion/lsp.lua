@@ -77,6 +77,7 @@ for _, server in ipairs(lsp_installer.get_installed_servers()) do
 						unusedparams = true,
 						unusewrites = true,
 					},
+					gofumpt = true,
 				},
 			},
 		})
