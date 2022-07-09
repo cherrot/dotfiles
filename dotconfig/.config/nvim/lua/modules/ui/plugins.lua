@@ -50,9 +50,7 @@ ui["akinsho/bufferline.nvim"] = {
 ui["dstein64/nvim-scrollview"] = {
 	opt = true,
 	event = { "BufReadPost" },
-	config = function()
-		require("scrollview").setup({})
-	end,
+	config = conf.scrollview,
 }
 ui["mbbill/undotree"] = {
 	opt = true,
@@ -61,9 +59,7 @@ ui["mbbill/undotree"] = {
 ui["j-hui/fidget.nvim"] = {
 	opt = true,
 	event = "BufReadPost",
-	config = function()
-		require("fidget").setup({})
-	end,
+	config = conf.fidget,
 }
 
 return ui
