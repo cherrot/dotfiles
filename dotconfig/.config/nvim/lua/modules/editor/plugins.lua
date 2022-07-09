@@ -153,8 +153,12 @@ editor["brglng/vim-im-select"] = {
 }
 editor["chentoast/marks.nvim"] = {
 	opt = true,
-	event = "BufRead",
+	event = "BufReadPost",
 	config = conf.marks,
+}
+editor["luukvbaal/stabilize.nvim"] = {
+	opt = true,
+	event = "BufRead",
 }
 
 return editor
