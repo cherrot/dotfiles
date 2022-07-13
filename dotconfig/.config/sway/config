@@ -19,6 +19,11 @@ set $term kitty
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu rofi -show combi | xargs swaymsg exec --
 
+set $disp0 "eDP-1"
+set $disp1 "DP-1"
+set $disp2 "DP-2"
+set $disp3 "DP-3"
+
 ############################
 # Output configuration
 ############################
@@ -33,10 +38,17 @@ font pango:monospace 9
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fit
 #
-output eDP-1 resolution 2880x1800 position 3000 2160 render_bit_depth 10
-output DP-1 resolution 3840x2160 position 0 0
-output DP-2 resolution 3840x2160 position 0 0
-output DP-3 resolution 3840x2160 position 0 0
+output $disp0 resolution 2880x1800 position 3000 2160 render_bit_depth 10
+output $disp1 resolution 3840x2160 position 0 0
+output $disp2 resolution 3840x2160 position 0 0
+output $disp3 resolution 3840x2160 position 0 0
+
+workspace 1 output $disp0
+workspace 3 output $disp0
+workspace 5 output $disp0
+workspace 2 output $disp2 $disp3 $disp1 $disp0
+workspace 4 output $disp2 $disp3 $disp1 $disp0
+workspace 6 output $disp2 $disp3 $disp1 $disp0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -99,6 +111,11 @@ input 1:1:AT_Translated_Set_2_keyboard {
 
 input type:touchpad {
     tap enabled
+    natural_scroll enabled
+}
+
+input type:pointer {
+    accel_profile flat
     natural_scroll enabled
 }
 
@@ -290,7 +307,7 @@ exec blueman-applet
 exec variety
 # Notification Daemon
 exec swaync
-exec wlsunset -S 06:00 -s 12:00 -T 6500 -t 4000 -d 1800
+exec wlsunset -S 06:00 -s 11:30 -T 6500 -t 4000 -d 1800
 exec nextcloud --background
 
 ############################
