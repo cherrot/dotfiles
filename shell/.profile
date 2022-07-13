@@ -48,7 +48,7 @@ alias pacmir='sudo pacman -Syy'  # 强制刷新软件仓库信息
 #alias tar='COPYFILE_DISABLE=1 tar' # For MacOS
 #alias sed=gsed  # Use gnu-sed in MacOS
 
-export EDITOR=vim
+export EDITOR=nvim
 export TERMINAL=kitty
 export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/keyring/ssh

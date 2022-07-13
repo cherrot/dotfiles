@@ -14,6 +14,8 @@ stow dotconfig
 if [[ "${OS}" == "Darwin" ]]; then
     stow git
 elif [[ "${OS}" == "Linux" ]]; then
+    sudo stow -t /etc etc
+
     if [[ $XDG_SESSION_TYPE == "x11" ]]; then
         stow home4X
         sudo stow -t /etc etc4X
