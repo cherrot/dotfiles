@@ -112,6 +112,7 @@ input 1:1:AT_Translated_Set_2_keyboard {
 input type:touchpad {
     tap enabled
     natural_scroll enabled
+    scroll_factor 0.4
 }
 
 input type:pointer {
@@ -297,7 +298,7 @@ include /etc/sway/config.d/*
 #exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec nm-applet
+exec nm-applet --indicator
 
 # exec autotiling
 exec fcitx5 -d
@@ -329,6 +330,15 @@ bindsym $mod+Shift+s exec flameshot gui
 bindsym $mod+Shift+n exec swaync-client -t -sw
 # enter idle state immediately
 bindsym $mod+Shift+p exec killall -SIGUSR1 swayidle
+
+# Allow switching between workspaces with left and right swipes
+bindgesture swipe:right workspace prev
+bindgesture swipe:left workspace next
+# Allow container movements by pinching them
+bindgesture pinch:inward+up move up
+bindgesture pinch:inward+down move down
+bindgesture pinch:inward+left move left
+bindgesture pinch:inward+right move right
 
 ############################
 # custom window setting
