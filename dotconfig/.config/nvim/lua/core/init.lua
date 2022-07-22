@@ -108,6 +108,9 @@ local load_core = function()
 	pack.load_compile()
 
 	vim.cmd([[colorscheme nord]])
+	-- vim.cmd([[set background=light]])
+	-- set_catppuccin_autocompile()
+	-- vim.cmd([[colorscheme catppuccin]])
 end
 
 load_core()
