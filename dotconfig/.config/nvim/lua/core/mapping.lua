@@ -24,8 +24,8 @@ local def_map = {
 	["n|<A-{>"] = map_cr("resize -2"):with_silent(),
 	["n|<A-}>"] = map_cr("resize +2"):with_silent(),
 	["n|<C-q>"] = map_cr("wq"),
-	["n|<A-q>"] = map_cr("Bwipeout"),
-	["n|<C-x>k"] = map_cr("Bdelete"):with_noremap():with_silent(),
+	["n|<A-q>"] = map_cr("Bdelete"):with_noremap():with_silent(),
+	["n|<C-x>k"] = map_cr("Bwipeout"),
 	["n|<leader>o"] = map_cr("setlocal spell! spelllang=en_us"),
 	["n|<Leader>q"] = map_cr("cclose"),
 	-- Insert
