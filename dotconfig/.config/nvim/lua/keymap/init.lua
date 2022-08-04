@@ -24,7 +24,6 @@ local plug_map = {
 	["n|7gb"] = map_cr("BufferLineGoToBuffer 7"):with_noremap():with_silent(),
 	["n|8gb"] = map_cr("BufferLineGoToBuffer 8"):with_noremap():with_silent(),
 	["n|9gb"] = map_cr("BufferLineGoToBuffer 9"):with_noremap():with_silent(),
-	["n|0gb"] = map_cr("BufferLineGoToBuffer 10"):with_noremap():with_silent(),
 	-- Packer
 	["n|<leader>ps"] = map_cr("PackerSync"):with_silent():with_noremap():with_nowait(),
 	["n|<leader>pu"] = map_cr("PackerUpdate"):with_silent():with_noremap():with_nowait(),

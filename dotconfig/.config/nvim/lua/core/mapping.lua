@@ -26,6 +26,7 @@ local def_map = {
 	["n|<C-q>"] = map_cr("wq"),
 	["n|<A-q>"] = map_cr("Bdelete"):with_noremap():with_silent(),
 	["n|<C-x>k"] = map_cr("Bwipeout"),
+	["n|<A-k>"] = map_cr("tabclose"):with_noremap():with_silent(),
 	["n|<leader>o"] = map_cr("setlocal spell! spelllang=en_us"),
 	["n|<Leader>q"] = map_cr("cclose"),
 	-- Insert
