@@ -85,15 +85,28 @@ editor["max397574/better-escape.nvim"] = {
 	event = "BufReadPost",
 	config = conf.better_escape,
 }
-editor["rcarriga/nvim-dap-ui"] = {
-	opt = true,
-	config = conf.dapui,
-}
 editor["mfussenegger/nvim-dap"] = {
 	opt = true,
-	cmd = "DapToggleBreakpoint",
+	cmd = {
+		"DapSetLogLevel",
+		"DapShowLog",
+		"DapContinue",
+		"DapToggleBreakpoint",
+		"DapToggleRepl",
+		"DapStepOver",
+		"DapStepInto",
+		"DapStepOut",
+		"DapTerminate",
+	},
+	module = "dap",
 	config = conf.dap,
 }
+editor["rcarriga/nvim-dap-ui"] = {
+	opt = true,
+	after = "nvim-dap", -- Need to call setup after dap has been initialized.
+	config = conf.dapui,
+}
+
 -- Git integration
 editor["tpope/vim-fugitive"] = { opt = true, cmd = { "Git", "G" } }
 editor["rhysd/git-messenger.vim"] = {
