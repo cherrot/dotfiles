@@ -46,11 +46,20 @@ local plug_map = {
 	["n|gd"] = map_cr("Lspsaga preview_definition"):with_noremap():with_silent(),
 	["n|gD"] = map_cr("lua vim.lsp.buf.definition()"):with_noremap():with_silent(),
 	["n|gh"] = map_cr("lua vim.lsp.buf.references()"):with_noremap():with_silent(),
-	["n|<Leader>t"] = map_cu('lua require("FTerm").toggle()'):with_noremap():with_silent(),
-	["t|<Leader>t"] = map_cu([[<C-\><C-n><CMD>lua require("FTerm").toggle()]]):with_noremap():with_silent(),
-	["t|<Leader><Leeader>t"] = map_cu([[<C-\><C-n><CMD>lua require("FTerm").exit()]]):with_noremap():with_silent(),
-	["n|<Leader>g"] = map_cu("lua require('FTerm').run('lazygit')"):with_noremap():with_silent(),
-	["n|<Leader>G"] = map_cu("Git"):with_noremap():with_silent(),
+	-- toggleterm
+	["t|<Esc><Esc>"] = map_cmd([[<C-\><C-n>]]), -- :with_buffer(0), not working
+	["n|<C-->"] = map_cr([[execute v:count . "ToggleTerm direction=horizontal"]]):with_noremap():with_silent(),
+	["i|<C-->"] = map_cmd("<Esc><Cmd>ToggleTerm<CR>"):with_noremap():with_silent(),
+	["t|<C-->"] = map_cmd("<Esc><Cmd>ToggleTerm<CR>"):with_noremap():with_silent(),
+	["n|<C-=>"] = map_cr([[execute v:count . "ToggleTerm direction=vertical"]]):with_noremap():with_silent(),
+	["i|<C-=>"] = map_cmd("<Esc><Cmd>ToggleTerm<CR>"):with_noremap():with_silent(),
+	["t|<C-=>"] = map_cmd("<Esc><Cmd>ToggleTerm<CR>"):with_noremap():with_silent(),
+	["n|<leader>t"] = map_cr([[execute v:count . "ToggleTerm direction=float"]]):with_noremap():with_silent(),
+	["t|<leader>t"] = map_cmd("<Esc><Cmd>ToggleTerm<CR>"):with_noremap():with_silent(),
+
+	["n|<leader>z"] = map_cr("lua toggle_lazygit()"):with_noremap():with_silent(),
+	["t|<leader>z"] = map_cmd("<Esc><Cmd>lua toggle_lazygit()<CR>"):with_noremap():with_silent(),
+	["n|<leader>G"] = map_cu("Git"):with_noremap():with_silent(),
 	-- ["n|gps"] = map_cr("G push"):with_noremap():with_silent(),
 	-- ["n|gpl"] = map_cr("G pull"):with_noremap():with_silent(),
 	-- Plugin trouble
@@ -61,7 +70,7 @@ local plug_map = {
 	["n|<leader>xl"] = map_cr("TroubleToggle loclist"):with_noremap():with_silent(),
 	["n|gR"] = map_cr("TroubleToggle lsp_references"):with_noremap():with_silent(),
 	-- Plugin nvim-tree
-	["n|<C-n>"] = map_cr("NvimTreeToggle"):with_noremap():with_silent(),
+	["n|<C-m>"] = map_cr("NvimTreeToggle"):with_noremap():with_silent(),
 	["n|<Leader>nf"] = map_cr("NvimTreeFindFile"):with_noremap():with_silent(),
 	["n|<Leader>nr"] = map_cr("NvimTreeRefresh"):with_noremap():with_silent(),
 	-- Plugin Aerial
@@ -96,8 +105,6 @@ local plug_map = {
 	-- Plugin EasyAlign
 	["n|ga"] = map_cmd("v:lua.enhance_align('nga')"):with_expr(),
 	["x|ga"] = map_cmd("v:lua.enhance_align('xga')"):with_expr(),
-	-- Plugin split-term
-	["n|<C-w>t"] = map_cr("VTerm"):with_noremap():with_silent(),
 	-- Plugin MarkdownPreview
 	["n|<F5>"] = map_cr("MarkdownPreviewToggle"):with_noremap():with_silent(),
 	-- Plugin auto_session

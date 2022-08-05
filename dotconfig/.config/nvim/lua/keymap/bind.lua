@@ -9,6 +9,7 @@ function rhs_options:new()
 			expr = false,
 			nowait = false,
 		},
+		buffer = false,
 	}
 	setmetatable(instance, self)
 	self.__index = self
@@ -56,6 +57,11 @@ function rhs_options:with_nowait()
 	return self
 end
 
+function rhs_options:with_buffer(num)
+	self.buffer = num
+	return self
+end
+
 local pbind = {}
 
 function pbind.map_cr(cmd_string)
@@ -84,7 +90,12 @@ function pbind.nvim_load_mapping(mapping)
 		if type(value) == "table" then
 			local rhs = value.cmd
 			local options = value.options
-			vim.api.nvim_set_keymap(mode, keymap, rhs, options)
+			local buf = value.buffer
+			if buf then
+				vim.api.nvim_buf_set_keymap(buf, mode, keymap, rhs, options)
+			else
+				vim.api.nvim_set_keymap(mode, keymap, rhs, options)
+			end
 		end
 	end
 end

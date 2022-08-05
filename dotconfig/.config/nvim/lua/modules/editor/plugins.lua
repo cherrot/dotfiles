@@ -64,13 +64,12 @@ editor["karb94/neoscroll.nvim"] = {
 	event = "BufRead",
 	config = conf.neoscroll,
 }
-editor["vimlab/split-term.vim"] = { opt = true, cmd = { "Term", "VTerm" } }
 editor["akinsho/toggleterm.nvim"] = {
 	opt = true,
-	event = "BufReadPost",
+	-- cmd = { "ToggleTerm", "TermExec" },
+	event = "UIEnter",
 	config = conf.toggleterm,
 }
-editor["numtostr/FTerm.nvim"] = { opt = true, event = "BufReadPost" }
 editor["norcalli/nvim-colorizer.lua"] = {
 	opt = true,
 	event = "BufReadPost",
@@ -100,7 +99,7 @@ editor["tpope/vim-fugitive"] = { opt = true, cmd = { "Git", "G" } }
 editor["rhysd/git-messenger.vim"] = {
 	opt = true,
 	cmd = "GitMessenger",
-	keys = "<Leader>gm",
+	keys = "<leader>gm",
 	config = conf.git_messenger,
 }
 

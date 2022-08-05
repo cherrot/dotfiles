@@ -25,3 +25,19 @@ _G.enhance_align = function(key)
 	local map = { ["nga"] = "<Plug>(EasyAlign)", ["xga"] = "<Plug>(EasyAlign)" }
 	return t(map[key])
 end
+
+local _lazygit = nil
+_G.toggle_lazygit = function()
+	if not _lazygit then
+		-- if not packer_plugins["toggleterm.nvim"].loaded then
+		-- 	vim.cmd([[packadd toggleterm.nvim]])
+		-- end
+		local Terminal = require("toggleterm.terminal").Terminal
+		_lazygit = Terminal:new({
+			cmd = "lazygit",
+			hidden = true,
+			direction = "float",
+		})
+	end
+	_lazygit:toggle()
+end
