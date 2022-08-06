@@ -48,7 +48,7 @@ editor["andymass/vim-matchup"] = {
 	config = conf.matchup,
 }
 editor["rhysd/accelerated-jk"] = { opt = true, event = "BufWinEnter" }
-editor["hrsh7th/vim-eft"] = { opt = true, event = "BufRead" }
+editor["hrsh7th/vim-eft"] = { opt = true, event = "BufReadPost" }
 editor["romainl/vim-cool"] = {
 	opt = true,
 	event = { "CursorMoved", "InsertEnter" },
@@ -61,7 +61,7 @@ editor["phaazon/hop.nvim"] = {
 }
 editor["karb94/neoscroll.nvim"] = {
 	opt = true,
-	event = "BufRead",
+	event = "BufReadPost",
 	config = conf.neoscroll,
 }
 editor["akinsho/toggleterm.nvim"] = {
@@ -138,7 +138,7 @@ editor["sindrets/diffview.nvim"] = {
 }
 editor["brglng/vim-im-select"] = {
 	opt = true,
-	event = "BufRead",
+	event = "BufReadPost",
 	config = conf.imselect,
 }
 editor["chentoast/marks.nvim"] = {
