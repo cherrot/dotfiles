@@ -49,16 +49,17 @@ local plug_map = {
 	-- toggleterm
 	["t|<Esc><Esc>"] = map_cmd([[<C-\><C-n>]]), -- :with_buffer(0), not working
 	["n|<C-->"] = map_cr([[execute v:count . "ToggleTerm direction=horizontal"]]):with_noremap():with_silent(),
-	["i|<C-->"] = map_cmd("<Esc><Cmd>ToggleTerm<CR>"):with_noremap():with_silent(),
+	["i|<C-->"] = map_cmd("<Esc><Cmd>ToggleTerm direction=horizontal<CR>"):with_noremap():with_silent(),
 	["t|<C-->"] = map_cmd("<Esc><Cmd>ToggleTerm<CR>"):with_noremap():with_silent(),
 	["n|<C-=>"] = map_cr([[execute v:count . "ToggleTerm direction=vertical"]]):with_noremap():with_silent(),
-	["i|<C-=>"] = map_cmd("<Esc><Cmd>ToggleTerm<CR>"):with_noremap():with_silent(),
+	["i|<C-=>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=vertical<CR>"):with_noremap():with_silent(),
 	["t|<C-=>"] = map_cmd("<Esc><Cmd>ToggleTerm<CR>"):with_noremap():with_silent(),
-	["n|<leader>t"] = map_cr([[execute v:count . "ToggleTerm direction=float"]]):with_noremap():with_silent(),
-	["t|<leader>t"] = map_cmd("<Esc><Cmd>ToggleTerm<CR>"):with_noremap():with_silent(),
+	["n|<A-f>"] = map_cr([[execute v:count . "ToggleTerm direction=float"]]):with_noremap():with_silent(),
+	["i|<A-f>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=float<CR>"):with_noremap():with_silent(),
+	["t|<A-f>"] = map_cmd("<Esc><Cmd>ToggleTerm<CR>"):with_noremap():with_silent(),
 
-	["n|<leader>z"] = map_cr("lua toggle_lazygit()"):with_noremap():with_silent(),
-	["t|<leader>z"] = map_cmd("<Esc><Cmd>lua toggle_lazygit()<CR>"):with_noremap():with_silent(),
+	["n|<leader>t"] = map_cr("lua toggle_lazygit()"):with_noremap():with_silent(),
+	["t|<leader>t"] = map_cmd("<Esc><Cmd>lua toggle_lazygit()<CR>"):with_noremap():with_silent(),
 	["n|<leader>G"] = map_cu("Git"):with_noremap():with_silent(),
 	-- ["n|gps"] = map_cr("G push"):with_noremap():with_silent(),
 	-- ["n|gpl"] = map_cr("G pull"):with_noremap():with_silent(),
