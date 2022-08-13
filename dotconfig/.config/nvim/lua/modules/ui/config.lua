@@ -484,9 +484,9 @@ function config.lualine()
 		lualine_y = {},
 		lualine_z = { "location" },
 	}
-	local aerial = {
+	local outline = {
 		sections = mini_sections,
-		filetypes = { "aerial" },
+		filetypes = { "lspsagaoutline" },
 	}
 	local dapui_scopes = {
 		sections = simple_sections,
@@ -585,7 +585,7 @@ function config.lualine()
 			"nvim-tree",
 			"toggleterm",
 			"fugitive",
-			aerial,
+			outline,
 			dapui_scopes,
 			dapui_breakpoints,
 			dapui_stacks,
