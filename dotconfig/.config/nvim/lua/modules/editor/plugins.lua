@@ -27,7 +27,6 @@ editor["nvim-treesitter/playground"] = {
 editor["p00f/nvim-ts-rainbow"] = {
 	opt = true,
 	after = "nvim-treesitter",
-	event = "BufReadPost",
 }
 editor["JoosepAlviste/nvim-ts-context-commentstring"] = {
 	opt = true,
