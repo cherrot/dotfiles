@@ -343,6 +343,10 @@ bindgesture pinch:inward+right move right
 ############################
 # custom window setting
 ############################
+# swaymsg -t get_tree
+
+# https://www.reddit.com/r/swaywm/comments/vuhr75/why_does_chromium_with_app_now_grab_complete/
+for_window [app_id="^chrome-.*"] shortcuts_inhibitor disable
 for_window [class="GoldenDict"] floating enable
 # for_window [class="mpv"] floating enable
 # image viewer, laggy and glitchy in float window, I don't know why (maybe picom's fault?)
