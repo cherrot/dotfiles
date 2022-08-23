@@ -303,13 +303,13 @@ exec nm-applet --indicator
 # exec autotiling
 exec fcitx5 -d
 # exec deadd-notification-center
-exec flameshot
 exec blueman-applet
 exec variety
 # Notification Daemon
 exec swaync
 exec wlsunset -S 06:00 -s 11:30 -T 6500 -t 4000 -d 1800
-exec nextcloud --background
+# sleep 3s to show tray icon in waybar
+exec sleep 3 && nextcloud --background
 
 ############################
 # custom binding
@@ -325,7 +325,11 @@ bindsym $mod+n exec google-chrome-stable --disk-cache-dir="$XDG_RUNTIME_DIR/chro
 bindsym $mod+m exec nautilus
 bindsym $mod+Shift+m exec $term ranger
 #bindsym $mod+Shift+m exec ranger
-bindsym $mod+Shift+s exec flameshot gui
+
+bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy --type image/png
+bindsym $mod+$alt+s exec grim -g "$(slurp)" "$HOME/Pictures/screenshots/$(date +%Y%m%d-%H%M%S).png"
+bindsym $mod+p exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') "$HOME/Pictures/screenshots/$(date +%Y%m%d-%H%M%S).png"
+
 # Toggle control center
 bindsym $mod+Shift+n exec swaync-client -t -sw
 # enter idle state immediately
