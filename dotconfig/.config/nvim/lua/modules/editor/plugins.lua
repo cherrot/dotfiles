@@ -150,5 +150,9 @@ editor["luukvbaal/stabilize.nvim"] = {
 	opt = true,
 	event = "BufReadPost",
 }
+editor["powerman/vim-plugin-AnsiEsc"] = {
+	opt = true,
+	cmd = "AnsiEsc",
+}
 
 return editor
