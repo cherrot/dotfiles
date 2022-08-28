@@ -264,11 +264,6 @@ function config.catppuccin()
 			vim_sneak = false,
 			fern = false,
 			barbar = false,
-			bufferline = {
-				enabled = true,
-				italics = true,
-				bolds = true,
-			},
 			markdown = true,
 			lightspeed = false,
 			ts_rainbow = true,
@@ -287,6 +282,7 @@ function config.catppuccin()
 			beacon = false,
 			navic = { enabled = true, custom_bg = "NONE" },
 			overseer = false,
+			fidget = true,
 		},
 		color_overrides = {
 			mocha = {
@@ -338,36 +334,9 @@ function config.catppuccin()
 				LspDiagnosticsVirtualTextHint = { fg = cp.rosewater },
 				LspDiagnosticsUnderlineHint = { sp = cp.rosewater },
 
-				-- For Ts-Rainbow
-				rainbowcol1 = { bg = cp.none },
-				rainbowcol2 = { bg = cp.none },
-				rainbowcol3 = { bg = cp.none },
-				rainbowcol4 = { bg = cp.none },
-				rainbowcol5 = { bg = cp.none },
-				rainbowcol6 = { bg = cp.none },
-				rainbowcol7 = { bg = cp.none },
-
-				-- For bufferline
-				BufferLineWarning = { fg = cp.yellow },
-				BufferLineWarningVisible = { fg = cp.yellow },
-				BufferLineWarningDiagnostic = { fg = cp.yellow },
-				BufferLineWarningDiagnosticVisible = { fg = cp.yellow },
-				BufferLineWarningSelected = { fg = cp.yellow },
-				BufferLineWarningDiagnosticSelected = { fg = cp.yellow },
-
-				BufferLineInfo = { fg = cp.sky },
-				BufferLineInfoVisible = { fg = cp.sky },
-				BufferLineInfoDiagnostic = { fg = cp.sky },
-				BufferLineInfoDiagnosticVisible = { fg = cp.sky },
-				BufferLineInfoDiagnosticSelected = { fg = cp.sky },
-				BufferLineInfoSelected = { fg = cp.sky },
-
-				BufferLineHint = { fg = cp.rosewater },
-				BufferLineHintVisible = { fg = cp.rosewater },
-				BufferLineHintDiagnostic = { fg = cp.rosewater },
-				BufferLineHintDiagnosticVisible = { fg = cp.rosewater },
-				BufferLineHintSelected = { fg = cp.rosewater },
-				BufferLineHintDiagnosticSelected = { fg = cp.rosewater },
+				-- For fidget.
+				FidgetTask = { bg = cp.none, fg = cp.surface2 },
+				FidgetTitle = { fg = cp.blue, style = { "bold" } },
 
 				-- For treesitter.
 				TSField = { fg = cp.rosewater },
@@ -864,9 +833,9 @@ function config.nvim_tree()
 end
 
 function config.nvim_bufferline()
-	require("bufferline").setup({
+	local opts = {
 		options = {
-			number = "none",
+			number = nil,
 			modified_icon = "✥",
 			buffer_close_icon = "",
 			left_trunc_marker = "",
@@ -892,7 +861,50 @@ function config.nvim_bufferline()
 				return "(" .. count .. ")"
 			end,
 		},
-	})
+		-- Change bufferline's highlights here! See `:h bufferline-highlights` for detailed explanation.
+		-- Note: If you use catppuccin then modify the colors below!
+		highlights = {},
+	}
+
+	if vim.g.colors_name == "catppuccin" then
+		local cp = require("catppuccin.palettes").get_palette() -- Get the palette.
+		cp.none = "NONE" -- Special setting for complete transparent fg/bg.
+
+		local catppuccin_hl_overwrite = {
+			highlights = require("catppuccin.groups.integrations.bufferline").get({
+				styles = { "italic", "bold" },
+				custom = {
+					mocha = {
+						-- Warnings
+						warning = { fg = cp.yellow },
+						warning_visible = { fg = cp.yellow },
+						warning_selected = { fg = cp.yellow },
+						warning_diagnostic = { fg = cp.yellow },
+						warning_diagnostic_visible = { fg = cp.yellow },
+						warning_diagnostic_selected = { fg = cp.yellow },
+						-- Infos
+						info = { fg = cp.sky },
+						info_visible = { fg = cp.sky },
+						info_selected = { fg = cp.sky },
+						info_diagnostic = { fg = cp.sky },
+						info_diagnostic_visible = { fg = cp.sky },
+						info_diagnostic_selected = { fg = cp.sky },
+						-- Hint
+						hint = { fg = cp.rosewater },
+						hint_visible = { fg = cp.rosewater },
+						hint_selected = { fg = cp.rosewater },
+						hint_diagnostic = { fg = cp.rosewater },
+						hint_diagnostic_visible = { fg = cp.rosewater },
+						hint_diagnostic_selected = { fg = cp.rosewater },
+					},
+				},
+			}),
+		}
+
+		opts = vim.tbl_deep_extend("force", opts, catppuccin_hl_overwrite)
+	end
+
+	require("bufferline").setup(opts)
 end
 
 function config.gitsigns()
@@ -1021,7 +1033,9 @@ function config.scrollview()
 end
 
 function config.fidget()
-	require("fidget").setup({})
+	require("fidget").setup({
+		window = { blend = 0 },
+	})
 end
 
 return config
