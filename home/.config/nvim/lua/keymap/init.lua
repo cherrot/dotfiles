@@ -41,12 +41,12 @@ local plug_map = {
 	["n|<C-Up>"] = map_cr("lua require('lspsaga.action').smart_scroll_with_saga(-1)"):with_noremap():with_silent(),
 	["n|<C-Down>"] = map_cr("lua require('lspsaga.action').smart_scroll_with_saga(1)"):with_noremap():with_silent(),
 	["n|<leader>ca"] = map_cr("Lspsaga code_action"):with_noremap():with_silent(),
-	["v|<leader>ca"] = map_cu("Lspsaga range_code_action"):with_noremap():with_silent(),
-	["n|<leader>F"] = map_cr("lua require('modules.completion.formatting').format({})"):with_noremap():with_silent(),
-	["v|<leader>F"] = map_cr("lua vim.lsp.buf.range_formatting()"):with_noremap():with_silent(),
-	["n|gd"] = map_cr("Lspsaga preview_definition"):with_noremap():with_silent(),
+	["v|<leader>ca"] = map_cu("Lspsaga code_action"):with_noremap():with_silent(),
+	["n|gd"] = map_cr("Lspsaga peek_definition"):with_noremap():with_silent(),
 	["n|gD"] = map_cr("lua vim.lsp.buf.definition()"):with_noremap():with_silent(),
 	["n|gh"] = map_cr("Lspsaga lsp_finder"):with_noremap():with_silent(),
+	["n|<leader>F"] = map_cr("lua require('modules.completion.formatting').format({})"):with_noremap():with_silent(),
+	["v|<leader>F"] = map_cr("lua vim.lsp.buf.range_formatting()"):with_noremap():with_silent(),
 	-- toggleterm
 	["t|<Esc><Esc>"] = map_cmd([[<C-\><C-n>]]), -- :with_buffer(0), not working
 	["n|<C-->"] = map_cr([[execute v:count . "ToggleTerm direction=horizontal"]]):with_noremap():with_silent(),
