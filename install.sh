@@ -6,16 +6,12 @@ set -o pipefail
 # Darwin or Linux
 OS=$(uname)
 
-#stow bin
-stow shell
-stow tig
-stow dotconfig
+stow home
 
 if [[ "${OS}" == "Darwin" ]]; then
-    stow git
+    ;
 elif [[ "${OS}" == "Linux" ]]; then
     #sudo stow -t /etc etc
-
     if [[ $XDG_SESSION_TYPE == "x11" ]]; then
         stow home4X
         sudo stow -t /etc etc4X

@@ -7,11 +7,6 @@
 [core]
 	autocrlf = input
 	ignorecase = false
-[diff]
-	tool = vimdiff
-[merge]
-	tool = vimdiff
-        #conflictstyle = diff3
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
