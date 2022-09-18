@@ -478,8 +478,8 @@ function config.marks()
 			virt_text = "",
 		},
 		mappings = {
-			toggle = "m;",
-			delete_buf = "m<space>",
+			toggle = "m<space>",
+			delete_buf = "m;",
 			next = "m]",
 			prev = "m[",
 			preview = "m<tab>",
