@@ -15,7 +15,7 @@ elif [[ "${OS}" == "Linux" ]]; then
     if [[ $XDG_SESSION_TYPE == "x11" ]]; then
         stow home4X
         sudo stow -t /etc etc4X
-    elif [[ $XDG_SESSION_TYPE == "x11" ]]; then
+    elif [[ $XDG_SESSION_TYPE == "wayland" ]]; then
         stow home4sway
         sudo stow -t /etc etc4sway
     else # tty
