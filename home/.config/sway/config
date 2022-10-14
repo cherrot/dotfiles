@@ -37,8 +37,8 @@ font pango:monospace 9
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fit
-#
-output $disp0 resolution 2880x1800 position 2048 1440 scale 2 render_bit_depth 10
+# render_bit_depth 10
+output $disp0 resolution 2560x1600 position 2048 1440 scale 1
 output $disp1 resolution 3840x2160 position 0 0 scale 1.5
 output $disp2 resolution 3840x2160 position 0 0 scale 1.5
 output $disp3 resolution 3840x2160 position 0 0 scale 1.5
@@ -137,6 +137,7 @@ input type:pointer {
     bindsym $mod+Shift+d exec rofi -show window
     # rofi-emoji from AUR
     bindsym $mod+g exec rofi -show emoji
+    bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort > /dev/null
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -321,7 +322,7 @@ bindsym $mod+$alt+p exec variety -p
 # https://wiki.archlinux.org/title/Chromium#Native_Wayland_support
 # https://wiki.archlinux.org/title/Wayland#Configuration_file
 # btw --gtk-version=4 has no effect on sway/sway-im-git
-bindsym $mod+n exec google-chrome-stable
+bindsym $mod+n exec google-chrome-beta
 bindsym $mod+m exec nautilus
 bindsym $mod+Shift+m exec $term ranger
 #bindsym $mod+Shift+m exec ranger
@@ -352,8 +353,4 @@ bindgesture pinch:inward+right move right
 # https://www.reddit.com/r/swaywm/comments/vuhr75/why_does_chromium_with_app_now_grab_complete/
 for_window [app_id="^chrome-.*"] shortcuts_inhibitor disable
 for_window [class="GoldenDict"] floating enable
-# for_window [class="mpv"] floating enable
-# image viewer, laggy and glitchy in float window, I don't know why (maybe picom's fault?)
-# for_window [class="Eog"] floating enable
-# EA game - it takes two's starter will try and resize the Windows in an infinite loop
-for_window [title="Origin"] floating enable
+for_window [class="mpv"] floating enable

@@ -3,50 +3,50 @@
 @define-color urgentcolor rgba(0,153,153,0.8);
 
 * {
-    border: none;
-    font-family: FiraCode Nerd Font, Material Icons, monospace;
-    font-size: 11px;
-    color: rgba(255,255,255,0.75);
-    border-radius: 8px;
+  border: none;
+  font-family: FiraCode Nerd Font, Material Icons, monospace;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
 }
 
 window {
-	/*font-weight: bold;*/
+  /*font-weight: bold;*/
 }
 window#waybar {
-    background: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0);
 }
 /*-----module groups----*/
 .modules-right {
-	background-color: @bgcolor;
-    margin: 2px 5px 0 0;
+  background-color: @bgcolor;
+  margin: 2px 5px 0 0;
 }
 .modules-center {
-	background-color: @bgcolor;
-    margin: 2px 0 0 0;
+  background-color: @bgcolor;
+  margin: 2px 0 0 0;
 }
 .modules-left {
-    margin: 2px 0 0 5px;
-	background-color: @bgcolor;
+  margin: 2px 0 0 5px;
+  background-color: @bgcolor;
 }
 /*-----modules indv----*/
 #workspaces button {
-    padding: 1px 5px;
-    background-color: transparent;
+  padding: 3px 10px;
+  background-color: transparent;
 }
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    box-shadow: inherit;
-    /* text-shadow: inherit; */
-	background: @urgentcolor;
+  box-shadow: inherit;
+  /* text-shadow: inherit; */
+  background: @urgentcolor;
 }
 
 #workspaces button.urgent {
-	background-color: @urgentcolor;
+  background-color: @urgentcolor;
 }
 
 #workspaces button.focused {
-	background-color: @selectcolor;
+  background-color: @selectcolor;
 }
 
 #clock,
@@ -62,39 +62,39 @@ window#waybar {
 #custom-power,
 #custom-menu,
 #idle_inhibitor {
-    padding: 0 10px;
+  padding: 0 10px;
 }
 #mode {
-    color: #cc3436;
-    font-weight: bold;
+  color: #cc3436;
+  font-weight: bold;
 }
 #custom-power {
-    background-color: rgba(0,119,179,0.6);
-    border-radius: 50px;
-    margin: 5px 5px;
-    padding: 1px 0 1px 5px;
+  background-color: rgba(0, 119, 179, 0.6);
+  border-radius: 50px;
+  margin: 5px 5px;
+  padding: 1px 0 1px 5px;
 }
 #tray menu {
-    background-color: @selectcolor;
+  background-color: @selectcolor;
 }
 /*-----Indicators----*/
 #idle_inhibitor.activated {
-    color: #2dcc36;
+  color: #2dcc36;
 }
 #pulseaudio.muted {
-    color: #cc3436;
+  color: #cc3436;
 }
 #battery.charging {
-    color: #2dcc36;
+  color: #2dcc36;
 }
 #battery.warning:not(.charging) {
-	color: #e6e600;
+  color: #e6e600;
 }
 #battery.critical:not(.charging) {
-    color: #cc3436;
+  color: #cc3436;
 }
 #temperature.critical {
-    color: #cc3436;
+  color: #cc3436;
 }
 /*-----Colors----*/
 /*
