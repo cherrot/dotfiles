@@ -1,6 +1,6 @@
 configuration {
     show-icons: true;
-    dpi: 192;
+    dpi: 144;
     modi: "run,ssh,combi";
     combi-modi: "drun,emoji";
 
