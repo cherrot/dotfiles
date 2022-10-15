@@ -17,7 +17,9 @@ elif [[ "${OS}" == "Linux" ]]; then
         sudo stow -t /etc etc4X
         sed -i 's/^font_size .*$/font_size 12.0/' home/.config/kitty/kitty.conf
     elif [[ $XDG_SESSION_TYPE == "wayland" ]]; then
-        stow home4sway
+        # Xwayland does not support scale, Chrome/Electron on wayland does not supoort IME.
+        # I decide to use Wayland without scale, to make XWayland work as expected.
+        # stow home4sway
         sudo stow -t /etc etc4sway
     else # tty
         ;
