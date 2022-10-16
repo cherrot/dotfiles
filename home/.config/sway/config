@@ -301,7 +301,7 @@ include /etc/sway/config.d/*
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec nm-applet --indicator
 
-# exec autotiling
+exec autotiling
 exec fcitx5 -d
 # exec deadd-notification-center
 exec blueman-applet
