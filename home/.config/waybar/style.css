@@ -1,5 +1,5 @@
-@define-color bgcolor rgba(27,31,38,0.6);
-@define-color selectcolor rgba(63,74,96,0.85);
+@define-color bgcolor rgba(27,31,38,0.7);
+@define-color selectcolor rgba(73,86,110,0.8);
 @define-color urgentcolor rgba(0,153,153,0.8);
 
 * {

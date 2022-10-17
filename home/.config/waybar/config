@@ -10,7 +10,7 @@
     },
     "sway/window": {
         "format": "   {} ",
-        "max-length": 50
+        "max-length": 60
     },
     "idle_inhibitor": {
         "format": "{icon}",
