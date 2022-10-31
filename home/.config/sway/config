@@ -38,7 +38,7 @@ font pango:monospace 14
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fit
 # render_bit_depth 10
-output $disp0 resolution 2560x1600 position 1400 2160 scale 1
+output $disp0 resolution 2560x1600 position 640 2160 scale 1
 output $disp1 resolution 3840x2160 position 0 0 scale 1
 output $disp2 resolution 3840x2160 position 0 0 scale 1
 output $disp3 resolution 3840x2160 position 0 0 scale 1
@@ -152,6 +152,8 @@ input type:pointer {
     #bindsym $mod+Shift+r restart
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+    # bindsym Ctrl+g exec goldendict $(wl-paste)
 #
 # Moving around:
 #
