@@ -40,6 +40,12 @@ window#waybar {
   /* text-shadow: inherit; */
   background: @urgentcolor;
 }
+/* https://github.com/Alexays/Waybar/pull/1120 */
+button:hover {
+  box-shadow: inherit;
+  /* text-shadow: inherit; */
+  background: @urgentcolor;
+}
 
 #workspaces button.urgent {
   background-color: @urgentcolor;
