@@ -87,3 +87,25 @@ source $HOME/.profile
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 eval "$(zoxide init zsh)"
+
+#If shell completion is not already enabled in your environment you will need
+#to enable it.  You can execute the following once:
+autoload -U compinit; compinit
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+##__conda_setup="$('/home/cherrot/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+##if [ $? -eq 0 ]; then
+##    eval "$__conda_setup"
+##else
+##    if [ -f "/home/cherrot/miniconda3/etc/profile.d/conda.sh" ]; then
+##        . "/home/cherrot/miniconda3/etc/profile.d/conda.sh"
+##    else
+##        export PATH="/home/cherrot/miniconda3/bin:$PATH"
+##    fi
+##fi
+##unset __conda_setup
+# Add my cherrot to speed up
+export PATH="/home/cherrot/miniconda3/bin:$PATH"
+# <<< conda initialize <<<
+
