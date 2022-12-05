@@ -1,0 +1,13 @@
+[Added Associations]
+image/jpeg=org.gnome.gThumb.desktop;
+application/pdf=google-chrome-stable.desktop;
+image/png=org.gnome.gThumb.desktop;
+
+[Default Applications]
+image/jpeg=org.gnome.gThumb.desktop;
+text/html=google-chrome-stable.desktop
+x-scheme-handler/about=google-chrome-stable.desktop
+x-scheme-handler/http=google-chrome-stable.desktop
+x-scheme-handler/https=google-chrome-stable.desktop
+x-scheme-handler/unknown=google-chrome-stable.desktop
+x-scheme-handler/mailto=google-chrome.desktop
