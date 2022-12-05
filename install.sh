@@ -11,7 +11,7 @@ stow home
 if [[ "${OS}" == "Darwin" ]]; then
     ;
 elif [[ "${OS}" == "Linux" ]]; then
-    #sudo stow -t /etc etc
+    sudo stow -t /etc etc
     if [[ $XDG_SESSION_TYPE == "x11" ]]; then
         stow home4X
         sudo stow -t /etc etc4X
