@@ -85,13 +85,13 @@
         "format-source": " {volume}",
         "format-source-muted": " ",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": " ",
+            "phone": " ",
+            "portable": " ",
+            "car": " ",
+            "default": [" ", " ", " "]
         },
         // https://askubuntu.com/questions/26068/how-do-you-mute-from-the-command-line
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
