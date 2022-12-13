@@ -90,7 +90,7 @@ eval "$(zoxide init zsh)"
 
 #If shell completion is not already enabled in your environment you will need
 #to enable it.  You can execute the following once:
-autoload -U compinit; compinit
+# autoload -U compinit; compinit
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
