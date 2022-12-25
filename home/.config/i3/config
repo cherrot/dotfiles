@@ -223,10 +223,6 @@ bar {
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy-rapid 10 5
 
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
-
 exec --no-startup-id picom
 exec --no-startup-id autotiling
 exec --no-startup-id fcitx5 -d
