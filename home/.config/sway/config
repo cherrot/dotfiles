@@ -148,6 +148,8 @@ input type:pointer {
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
+    # Hide/show waybar
+    bindsym $mod+Shift+x exec killall -SIGUSR1 waybar
     # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
     #bindsym $mod+Shift+r restart
     # Exit sway (logs you out of your Wayland session)
