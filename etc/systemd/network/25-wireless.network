@@ -1,0 +1,16 @@
+[Match]
+Name=wlan*
+#SSID=
+
+[Network]
+DHCP=yes
+IgnoreCarrierLoss=3s
+IPv6PrivacyExtensions=true
+#DNS=
+#DNS=
+
+[DHCPv4]
+#UseMTU=true
+#UseDNS=false
+Anonymize=true
+#RouteMetric=20
