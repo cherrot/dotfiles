@@ -9,7 +9,7 @@
         "format-alt": "{:%a %H:%M}"
     },
     "sway/window": {
-        "format": "   {} ",
+        "format": "  󰍹 {} ",
         "max-length": 60
     },
     "idle_inhibitor": {
@@ -59,7 +59,7 @@
     },
     "cpu": {
         "interval": 2,
-        "format": " {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}",
+        "format": "󰍛 {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     },
     "memory": {
@@ -80,7 +80,7 @@
         "scroll-step": 5, // %, can be a float
         "format": "{icon} {volume}",
         "format-bluetooth": "{icon} {volume} {format_source}",
-        "format-bluetooth-muted": "{icon}  {format_source}",
+        "format-bluetooth-muted": "{icon}  {format_source}",
         "format-muted": "{icon} Muted",
         "format-source": " {volume}",
         "format-source-muted": " ",
@@ -97,7 +97,7 @@
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
 	"custom/notify": {
-		"format": " {}",
+		"format": "󱅰 {}",
         "exec": "swaync-client -c",
         "interval": 10,
 	 	"on-click": "swaync-client -t -sw",
