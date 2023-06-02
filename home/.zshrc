@@ -109,3 +109,11 @@ eval "$(zoxide init zsh)"
 export PATH="/home/cherrot/miniconda3/bin:$PATH"
 # <<< conda initialize <<<
 
+
+# pnpm
+export PNPM_HOME="/home/cherrot/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
