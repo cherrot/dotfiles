@@ -20,6 +20,9 @@ Restart=on-failure
 # To resolve the issue with GPE interrupts, causing high temperatures and fan noise even on idle when the laptop is charging through USB-C/TB, 
 # add to the kernel parameters `acpi_mask_gpe=0x6E`. One way of doing it is adding to /etc/default/grub on the last GRUB_CMDLINE_LINUX_DEFAULT options.
 # However, this will cause issues with the keyboard screen brightness shortcuts which can be resolved by adding the Unmask GPE interrupts during boot: 
+
+# unmak immediately will bring CPU throttle back...
+ExecStartPre=/bin/sleep 60
 ExecStart=/bin/bash -c "echo 'unmask' > /sys/firmware/acpi/interrupts/gpe6E"
 
 # sets charging limit to 80 to increase battery longevity:
