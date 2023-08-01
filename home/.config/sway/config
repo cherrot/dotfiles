@@ -68,7 +68,7 @@ gaps top -3
 # borders
 # Activate smart borders (always)
 smart_borders on
-default_border pixel 2
+default_border pixel 3
 # class                 border  backgr. text    indicator child_border
 client.focused_inactive #131416 #131416 #888888 #131416 #131416
 client.unfocused        #131416 #131416 #888888 #131416 #131416
@@ -312,7 +312,7 @@ exec blueman-applet
 exec variety
 # Notification Daemon
 exec swaync
-exec wlsunset -S 06:00 -s 11:30 -T 6500 -t 4000 -d 1800
+exec wlsunset -S 06:00 -s 11:00 -T 6500 -t 4000 -d 1800
 # sleep 3s to show tray icon in waybar
 exec sleep 3 && nextcloud --background
 

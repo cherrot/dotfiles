@@ -1,5 +1,6 @@
 @define-color bgcolor rgba(27,31,38,0.7);
-@define-color selectcolor rgba(32,50,80,0.9);
+/* @define-color selectcolor rgba(32,50,80,0.9); */
+@define-color selectcolor #637496;
 @define-color urgentcolor rgba(0,153,153,0.8);
 
 * {
