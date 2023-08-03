@@ -1,6 +1,5 @@
 export GOPATH=~/go
 export PATH=$PATH:/usr/local/sbin:"$GOPATH/bin":$HOME/bin:$HOME/.local/bin
-export PATH="$PATH:${KREW_ROOT:-$HOME/.krew}/bin"
 export GOPROXY=https://goproxy.io                                  # 配置go module代理，绕过GFW下载golang.org下的package
 export GOPRIVATE=git-pd.megvii-inc.com,go.megvii-inc.com,bistro.sh # gitlab域名下的模块绕过GOPROXY
 
