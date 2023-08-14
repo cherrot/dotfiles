@@ -1,6 +1,6 @@
 export GOPATH=~/go
 export PATH=$PATH:"$GOPATH/bin":$HOME/bin:$HOME/.local/bin
-export GOPROXY=https://goproxy.io                                  # 配置go module代理，绕过GFW下载golang.org下的package
+# export GOPROXY=https://goproxy.io                                  # 配置go module代理，绕过GFW下载golang.org下的package
 export GOPRIVATE=git-pd.megvii-inc.com,go.megvii-inc.com,bistro.sh # gitlab域名下的模块绕过GOPROXY
 
 #export http_proxy=http://user:pass%2B%2B@host:port/
@@ -8,14 +8,6 @@ export GOPRIVATE=git-pd.megvii-inc.com,go.megvii-inc.com,bistro.sh # gitlab域�
 #export ftp_proxy=$http_proxy
 #export rsync_proxy=$http_proxy
 #export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
-
-# export LESS_TERMCAP_mb=$'\E[05;34m' # begin blinking
-# export LESS_TERMCAP_md=$'\E[01;34m' # begin bold
-# export LESS_TERMCAP_me=$'\E[0m'     # end mode
-# export LESS_TERMCAP_se=$'\E[0m'     # end standout-mode
-# export LESS_TERMCAP_so=$'\E[44;33m' # begin standout-mode
-# export LESS_TERMCAP_ue=$'\E[0m'     # end underline
-# export LESS_TERMCAP_us=$'\E[04;33m' # begin underline
 
 # [[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper.sh
 # wrapper_osx=$HOME/Library/Python/2.7/bin/virtualenvwrapper.sh
@@ -29,7 +21,6 @@ alias vim=nvim
 # make terminfo (TERM=xterm-kitty) consitant across ssh sessions.
 alias ssh="TERM=xterm-256color ssh"
 alias npm=pnpm
-alias nx='npx nx'
 
 #alias tar='COPYFILE_DISABLE=1 tar' # For MacOS
 #alias sed=gsed  # Use gnu-sed in MacOS

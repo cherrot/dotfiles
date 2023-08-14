@@ -50,7 +50,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(zsh-autosuggestions git)
-plugins=(git fzf zoxide kubectl helm)
+plugins=(git fzf zoxide direnv kubectl helm)
 
 # User configuration
 
