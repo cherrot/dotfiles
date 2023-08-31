@@ -2,7 +2,7 @@ configuration {
     show-icons: true;
     dpi: 144;
     modi: "run,ssh,combi";
-    combi-modi: "drun,emoji";
+    combi-modi: "drun";
 
 /*	font: "mono 12";*/
 /*	location: 0;*/
