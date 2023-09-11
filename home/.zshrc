@@ -72,7 +72,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git)
 
-plugins=(git fzf zoxide direnv kubectl helm)
+plugins=(git fzf zoxide direnv kubectl helm poetry)
 
 source $ZSH/oh-my-zsh.sh
 
