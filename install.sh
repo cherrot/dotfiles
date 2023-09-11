@@ -9,7 +9,7 @@ OS=$(uname)
 stow home
 
 if [[ "${OS}" == "Darwin" ]]; then
-    ;
+    sed -i 's/^font_size .*$/font_size 14.0/' home/.config/kitty/kitty.conf
 elif [[ "${OS}" == "Linux" ]]; then
     sudo stow -t /etc etc
     if [[ $XDG_SESSION_TYPE == "x11" ]]; then
