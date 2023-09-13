@@ -21,6 +21,7 @@ alias vim=nvim
 # make terminfo (TERM=xterm-kitty) consitant across ssh sessions.
 alias ssh="TERM=xterm-256color ssh"
 alias npm=pnpm
+alias whoowns='pacman -Qo'
 
 #alias tar='COPYFILE_DISABLE=1 tar' # For MacOS
 #alias sed=gsed  # Use gnu-sed in MacOS
