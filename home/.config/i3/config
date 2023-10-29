@@ -231,7 +231,7 @@ exec --no-startup-id redshift-gtk
 exec --no-startup-id flameshot
 exec --no-startup-id blueman-applet
 exec --no-startup-id variety
-
+exec --no-startup-id clash-verge
 # export SSH_AUTH_SOCK
 # Append `-ardelay 200 -arinterval 40` to /usr/bin/Xorg to avoid typematic delay being reset after suspend/resume
 # exec xset r rate 200 25
