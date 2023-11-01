@@ -29,7 +29,8 @@ ExecStart=/bin/bash -c "echo 'unmask' > /sys/firmware/acpi/interrupts/gpe6E"
 ExecStart=/bin/bash -c "echo 80 > /sys/class/power_supply/CMB0/charge_control_end_threshold"
 
 # Disable "Silent mode":
-ExecStart=/bin/bash -c "echo 1 > /sys/devices/platform/lg-laptop/fan_mode"
+# 2023-11-1 commented since it will cause CPU being sticked to 400MHz...
+#ExecStart=/bin/bash -c "echo 1 > /sys/devices/platform/lg-laptop/fan_mode"
 
 # Set the Fn lock for LG laptop
 ExecStart=/bin/bash -c 'echo 1 > /sys/devices/platform/lg-laptop/fn_lock'
