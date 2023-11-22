@@ -1,0 +1,8 @@
+show=drun
+width=40%
+height=35%
+allow_images=true
+always_parse_args=true
+print_command=true
+insensitive=true
+prompt= Hmm, what do you want to run?

@@ -17,7 +17,7 @@ set $term kitty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu rofi -show combi | xargs swaymsg exec --
+set $menu wofi
 
 set $disp0 "eDP-1"
 set $disp1 "DP-1"
@@ -134,10 +134,10 @@ input type:pointer {
 
     # Start your launcher
     bindsym $mod+d exec $menu
-    bindsym $mod+Shift+d exec rofi -show window
-    # rofi-emoji from AUR
-    bindsym $mod+g exec rofi -show emoji
-    bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort > /dev/null
+    #bindsym $mod+Shift+d exec rofi -show window
+    # wofi-emoji wofi-calc in AUR
+    bindsym $mod+g exec wofi-emoji
+    bindsym $mod+c exec wofi-calc
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
