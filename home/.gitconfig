@@ -1,7 +1,7 @@
 [user]
 	name = cherrot
 	email = cherrotluo@gmail.com
-	signingkey = 0373EEBB470E230F
+	signingkey = /home/cherrot/.ssh/id_ed25519.pub
 [format]
 	signOff = true
 [core]
@@ -18,3 +18,7 @@
 	rebase = true
 [fetch]
 	prune = true
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
