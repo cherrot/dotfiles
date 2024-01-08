@@ -3,6 +3,9 @@ export PATH=$PATH:"$GOPATH/bin":$HOME/bin:$HOME/.local/bin
 export GOPROXY=https://goproxy.cn,direct
 export GOPRIVATE=git-pd.megvii-inc.com,go.megvii-inc.com,bistro.sh # gitlab域名下的模块绕过GOPROXY
 
+export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+
 #export http_proxy=http://user:pass%2B%2B@host:port/
 #export https_proxy=$http_proxy
 #export ftp_proxy=$http_proxy
