@@ -22,8 +22,8 @@ Restart=on-failure
 # However, this will cause issues with the keyboard screen brightness shortcuts which can be resolved by adding the Unmask GPE interrupts during boot: 
 
 # unmak immediately will bring CPU throttle back...
-ExecStartPre=/bin/sleep 60
-ExecStart=/bin/bash -c "echo 'unmask' > /sys/firmware/acpi/interrupts/gpe6E"
+#ExecStartPre=/bin/sleep 60
+#ExecStart=/bin/bash -c "echo 'unmask' > /sys/firmware/acpi/interrupts/gpe6E"
 
 # sets charging limit to 80 to increase battery longevity:
 ExecStart=/bin/bash -c "echo 80 > /sys/class/power_supply/CMB0/charge_control_end_threshold"
