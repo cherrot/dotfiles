@@ -1,7 +1,8 @@
 [user]
 	name = cherrot
 	email = cherrotluo@gmail.com
-	signingkey = /home/cherrot/.ssh/id_ed25519.pub
+	# https://stackoverflow.com/questions/11262010/shell-variable-expansion-in-git-config
+	signingkey = ~/.ssh/id_ed25519.pub
 [format]
 	signOff = true
 [core]

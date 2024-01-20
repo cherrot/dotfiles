@@ -332,9 +332,11 @@ bindsym $mod+m exec nautilus
 bindsym $mod+Shift+m exec $term ranger
 #bindsym $mod+Shift+m exec ranger
 
+# Screenshot
 bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy --type image/png
-bindsym $mod+$alt+s exec grim -g "$(slurp)" "$HOME/Pictures/screenshots/$(date +%Y%m%d-%H%M%S).png"
-bindsym $mod+p exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') "$HOME/Pictures/screenshots/$(date +%Y%m%d-%H%M%S).png"
+bindsym $mod+Ctrl+Shift+s exec grim -g "$(slurp)" "$HOME/Pictures/screenshots/$(date +%Y%m%d-%H%M%S).png"
+bindsym $mod+Ctrl+s exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') "$HOME/Pictures/screenshots/$(date +%Y%m%d-%H%M%S).png"
+# Screen Record
 
 # Toggle control center
 bindsym $mod+Shift+n exec swaync-client -t -sw
