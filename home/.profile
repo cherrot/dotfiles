@@ -1,20 +1,9 @@
-export GOPATH=~/go
 export PATH=$PATH:"$GOPATH/bin":$HOME/bin:$HOME/.local/bin
-export GOPROXY=https://goproxy.cn,direct
-export GOPRIVATE=gitlab.basemind.com,git-pd.megvii-inc.com,go.megvii-inc.com,bistro.sh # gitlab域名下的模块绕过GOPROXY
+
+export GOPROXY=${GOPROXY_PREFIX}https://goproxy.cn,direct
 
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
-
-#export http_proxy=http://user:pass%2B%2B@host:port/
-#export https_proxy=$http_proxy
-#export ftp_proxy=$http_proxy
-#export rsync_proxy=$http_proxy
-#export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
-
-# [[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper.sh
-# wrapper_osx=$HOME/Library/Python/2.7/bin/virtualenvwrapper.sh
-# [[ -f $wrapper_osx ]] && source $wrapper_osx
 
 #Aliases:
 #
