@@ -25,7 +25,7 @@ fi
 export EDITOR=nvim
 export TERMINAL=kitty
 export GPG_TTY=$(tty)
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+[ -n "$XDG_RUNTIME_DIR" ] && export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 
 [[ -f $HOME/.cargo/env ]] && . "$HOME/.cargo/env"
 [[ -f /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
