@@ -14,10 +14,10 @@ alias vim=nvim
 alias ssh="TERM=xterm-256color ssh"
 alias npm=pnpm
 alias whoowns='pacman -Qo'
-if command -v exa >/dev/null; then
-	alias ls=exa
-	alias ll='exa -l'
-	alias l='exa -la'
+if command -v eza >/dev/null; then
+	alias ls=eza
+	alias ll='eza -l'
+	alias l='eza -la'
 fi
 
 #alias tar='COPYFILE_DISABLE=1 tar' # For MacOS
