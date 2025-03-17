@@ -36,7 +36,7 @@ automatically-unhide-macos-hidden-apps = false
 
 [mode.main.binding]
     # See: https://nikitabobko.github.io/AeroSpace/goodies#open-a-new-window-with-applescript
-    alt-enter = 'exec-and-forget /Applications/kitty.app/Contents/MacOS/kitty --single-instance ~'
+    alt-enter = 'exec-and-forget /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~'
 
     alt-s = 'layout v_accordion' # 'layout stacking' in i3
     alt-w = 'layout h_accordion' # 'layout tabbed' in i3
@@ -118,4 +118,3 @@ automatically-unhide-macos-hidden-apps = false
 
 [workspace-to-monitor-force-assignment]
     1 = 'secondary'                  # Non-main monitor in case when there are only two monitors
-    2 = 'secondary'                  # Non-main monitor in case when there are only two monitors
