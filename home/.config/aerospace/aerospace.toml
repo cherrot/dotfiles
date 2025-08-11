@@ -16,7 +16,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
-automatically-unhide-macos-hidden-apps = false
+automatically-unhide-macos-hidden-apps = true
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
@@ -118,3 +118,7 @@ automatically-unhide-macos-hidden-apps = false
 
 [workspace-to-monitor-force-assignment]
     1 = 'secondary'                  # Non-main monitor in case when there are only two monitors
+
+[[on-window-detected]]
+  if.app-name-regex-substring = 'Lark Helper'
+  run = ['layout floating', 'move-node-to-workspace 3']

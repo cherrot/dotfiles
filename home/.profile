@@ -20,6 +20,11 @@ if command -v eza >/dev/null; then
 	alias l='eza -la'
 fi
 
+# Kitty kittens
+alias icat="kitten icat"
+alias di="kitten diff"
+alias s="kitten ssh"
+
 #alias tar='COPYFILE_DISABLE=1 tar' # For MacOS
 #alias sed=gsed  # Use gnu-sed in MacOS
 export EDITOR=nvim
@@ -29,3 +34,14 @@ export GPG_TTY=$(tty)
 
 [[ -f $HOME/.cargo/env ]] && . "$HOME/.cargo/env"
 [[ -f /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
+
+# pnpm
+export PNPM_HOME="/Users/connor/Library/pnpm"
+case ":$PATH:" in
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# gemini
+export GOOGLE_CLOUD_PROJECT=symbolic-wind-388502
