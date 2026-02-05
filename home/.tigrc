@@ -1,3 +1,10 @@
+# 高对比度光标行：黄色文字 + 红色背景 + 粗体
+# color cursor yellow red bold
+# 或者使用反转颜色（reverse）—— 通常对比度最高
+color cursor default default reverse
+# 或者使用 256 色模式（如果终端支持）
+# color cursor 15 240 bold
+
 # Vim-style keybindings for Tig
 #
 # To use these keybindings copy the file to your HOME directory and include

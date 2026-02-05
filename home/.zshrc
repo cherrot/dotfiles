@@ -78,7 +78,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git sudo fzf zoxide direnv kubectl helm
   zsh-autosuggestions
-  # smart-suggestion
+  kimi-cli
 )
 
 source $ZSH/oh-my-zsh.sh

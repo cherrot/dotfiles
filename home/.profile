@@ -1,4 +1,4 @@
-export PATH=$PATH:"$GOPATH/bin":$HOME/bin:$HOME/.local/bin
+export PATH=$PATH:"$GOPATH/bin":$HOME/bin:$HOME/.local/bin:$HOME/go/bin
 
 export GOPROXY=${GOPROXY_PREFIX}https://goproxy.cn,direct
 

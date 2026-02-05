@@ -117,8 +117,17 @@ automatically-unhide-macos-hidden-apps = true
     esc = 'mode main'
 
 [workspace-to-monitor-force-assignment]
-    1 = 'secondary'                  # Non-main monitor in case when there are only two monitors
+    # 1 = 'secondary'                  # Non-main monitor in case when there are only two monitors
+    3 = 'secondary'                  # Non-main monitor in case when there are only two monitors
 
+# aerospace list-windows --all
+# aerospace list-apps
 [[on-window-detected]]
+  # if.app-id = 'com.electron.lark'
   if.app-name-regex-substring = 'Lark Helper'
-  run = ['layout floating', 'move-node-to-workspace 3']
+  run = ['layout floating']
+  # run = ['layout floating', 'move-node-to-workspace 3']
+[[on-window-detected]]
+  if.app-name-regex-substring = '飞书'
+  # if.window-title-regex-substring = '创建日程'
+  run = ['layout floating']
