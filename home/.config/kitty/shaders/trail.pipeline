@@ -1,0 +1,8 @@
+startgroup
+    animation_start cursor-trail-move
+    animation_stop cursor-trail-stop
+    animation_step 8
+    # 拖影直连光标，不留滞后缺口
+    var bool CONNECTED true
+    shaders cursor-trail-motion-blur
+endgroup

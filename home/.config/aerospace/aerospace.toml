@@ -1,5 +1,7 @@
 # Reference: https://github.com/i3/i3/blob/next/etc/config
 
+config-version = 2
+
 # Start AeroSpace at login
 start-at-login = true
 
@@ -116,9 +118,9 @@ automatically-unhide-macos-hidden-apps = true
     enter = 'mode main'
     esc = 'mode main'
 
-[workspace-to-monitor-force-assignment]
-    2 = 'secondary'                  # Non-main monitor in case when there are only two monitors
-    3 = 'secondary'                  # Non-main monitor in case when there are only two monitors
+#[workspace-to-monitor-force-assignment]
+#    2 = 'secondary'                  # Non-main monitor in case when there are only two monitors
+#    3 = 'secondary'                  # Non-main monitor in case when there are only two monitors
 
 # aerospace list-windows --all
 # aerospace list-apps

@@ -77,7 +77,6 @@ ZSH_THEME="robbyrussell"
 
 plugins=(
   git sudo fzf zoxide direnv kubectl helm jj
-  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -114,3 +113,6 @@ source $ZSH/oh-my-zsh.sh
 #If shell completion is not already enabled in your environment you will need
 #to enable it.  You can execute the following once:
 # autoload -U compinit; compinit
+
+# kimi-code
+export PATH="/Users/connor/.kimi-code/bin:$PATH"
