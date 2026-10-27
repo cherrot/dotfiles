@@ -1,4 +1,4 @@
-export PATH=$PATH:"$GOPATH/bin":$HOME/bin:$HOME/.local/bin:$HOME/go/bin
+export PATH=$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin
 
 export GOPROXY=${GOPROXY_PREFIX}https://goproxy.cn,direct
 
@@ -15,9 +15,9 @@ alias ssh="TERM=xterm-256color ssh"
 alias npm=pnpm
 alias whoowns='pacman -Qo'
 if command -v eza >/dev/null; then
-	alias ls=eza
-	alias ll='eza -l'
-	alias l='eza -la'
+  alias ls=eza
+  alias ll='eza -l'
+  alias l='eza -la'
 fi
 
 # Kitty kittens
